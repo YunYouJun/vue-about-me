@@ -2,14 +2,17 @@
   "name": "vue-about-me",
   "version": "0.0.1",
   "description": "Use Vue Element Display Copyright",
-  "main": "dist/vue-about-me.js",
+  "main": "dist/vue-about-me.min.js",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/YunYouJun/vue-copyright.git",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "dependencies": {},
   "scripts": {
     "dev": "npm run example",
-    "build": "bili src/index.js --format umd,cjs,es --exports named --module-name VueAboutMe",
+    "build": "bili src/index.js --plugin vue --format umd,umd-min,cjs,es --exports named --module-name VueAboutMe",
     "prepublish": "npm run build",
     "example": "poi example/index.js"
   },
@@ -29,6 +32,7 @@
     "element-ui": "^2.3.9",
     "node-sass": "^4.9.0",
     "poi": "^10.1.9",
+    "rollup-plugin-vue": "^4.1.4",
     "sass-loader": "^7.0.1"
   }
 }

@@ -1,7 +1,7 @@
-import AboutMe from './main'
+import VueAboutMe from './main.vue';
 
-AboutMe.install = function (Vue) {
-  Vue.component(AboutMe.name, AboutMe)
+VueAboutMe.install = function(Vue) {
+  Vue.component(VueAboutMe.name, VueAboutMe)
 }
 
-export default AboutMe
+export default VueAboutMe

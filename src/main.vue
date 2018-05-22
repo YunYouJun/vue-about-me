@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="copyright">
-        {{ copyright.projectName }} <i :class="copyright.logo"></i> {{ copyright.author }}
-      </div>
-      <div class="link">
-        <el-tooltip v-for="(link, index) in links" :key="index" class="item" effect="light" :content="link.label" placement="top">
-          <a class="link-item" ref="link"
-          :style="{color: link.color, borderColor: link.color}"
-          :href="link.href" target="_blank"
-          @mouseover="hoverStyle(index, link.color)"
-          @mouseout="resetStyle(index)">
-            <i :class="link.icon"></i>
-          </a>
-        </el-tooltip>
-      </div>
+  <div class="container">
+    <div class="copyright">
+      {{ copyright.projectName }} <i :class="copyright.logo"></i> {{ copyright.author }}
+    </div>
+    <div class="link">
+      <el-tooltip 
+      v-for="(link, index) in links" 
+      :key="index" class="item" effect="light" 
+      :content="link.label" 
+      placement="top"
+      >
+        <a class="link-item" ref="link"
+        :style="{color: link.color, borderColor: link.color}"
+        :href="link.href" target="_blank"
+        @mouseover="hoverStyle(index, link.color)"
+        @mouseout="resetStyle(index)">
+          <i :class="link.icon"></i>
+        </a>
+      </el-tooltip>
     </div>
   </div>
 </template>

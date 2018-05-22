@@ -554,7 +554,7 @@
     invariant "^2.2.2"
     semver "^5.3.0"
 
-"@babel/runtime@^7.0.0-beta.40":
+"@babel/runtime@^7.0.0-beta.40", "@babel/runtime@^7.0.0-beta.46":
   version "7.0.0-beta.47"
   resolved "http://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.0.0-beta.47.tgz#273f5e71629e80f6cbcd7507503848615e59f7e0"
   dependencies:
@@ -703,7 +703,7 @@
   version "0.0.38"
   resolved "http://registry.npm.taobao.org/@types/estree/download/@types/estree-0.0.38.tgz#c1be40aa933723c608820a99a373a16d215a1ca2"
 
-"@vue/component-compiler-utils@^1.0.0":
+"@vue/component-compiler-utils@^1.0.0", "@vue/component-compiler-utils@^1.2.1":
   version "1.2.1"
   resolved "http://registry.npm.taobao.org/@vue/component-compiler-utils/download/@vue/component-compiler-utils-1.2.1.tgz#3d543baa75cfe5dab96e29415b78366450156ef6"
   dependencies:
@@ -716,6 +716,15 @@
     prettier "^1.11.1"
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
+
+"@vue/component-compiler@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.npmjs.org/@vue/component-compiler/-/component-compiler-3.3.2.tgz#cccb36a698025c1ff93f8bd3ee7ed6ebc42c27c5"
+  dependencies:
+    "@vue/component-compiler-utils" "^1.2.1"
+    clean-css "^4.1.11"
+    hash-sum "^1.0.2"
+    postcss-modules-sync "^1.0.0"
 
 "@webassemblyjs/ast@1.4.3":
   version "1.4.3"
@@ -1248,9 +1257,9 @@ big.js@^3.1.3:
   version "3.2.0"
   resolved "http://registry.npm.taobao.org/big.js/download/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
 
-bili@^3.1.1:
-  version "3.1.1"
-  resolved "http://registry.npm.taobao.org/bili/download/bili-3.1.1.tgz#43d68b2c450339d254c288f0c43a082e2cd0dd46"
+bili@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.npmjs.org/bili/-/bili-3.1.2.tgz#0888ef9f479331c5f213899e2821a2e3ea35c72a"
   dependencies:
     "@babel/core" "^7.0.0-beta.39"
     "@babel/plugin-proposal-class-properties" "^7.0.0-beta.39"
@@ -1675,7 +1684,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-clean-css@4.1.x:
+clean-css@4.1.x, clean-css@^4.1.11:
   version "4.1.11"
   resolved "http://registry.npm.taobao.org/clean-css/download/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
   dependencies:
@@ -2184,7 +2193,7 @@ de-indent@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/de-indent/download/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6, debug@^2.6.8:
+debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8:
   version "2.6.9"
   resolved "http://registry.npm.taobao.org/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -3435,7 +3444,7 @@ iconv-lite@^0.4.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-icss-replace-symbols@1.1.0, icss-replace-symbols@^1.1.0:
+icss-replace-symbols@1.1.0, icss-replace-symbols@^1.0.2, icss-replace-symbols@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/icss-replace-symbols/download/icss-replace-symbols-1.1.0.tgz#06ea6f83679a7749e386cfe1fe812ae5db223ded"
 
@@ -5251,19 +5260,30 @@ postcss-modules-extract-imports@^1.2.0:
   dependencies:
     postcss "^6.0.1"
 
-postcss-modules-local-by-default@1.2.0, postcss-modules-local-by-default@^1.2.0:
+postcss-modules-local-by-default@1.2.0, postcss-modules-local-by-default@^1.1.1, postcss-modules-local-by-default@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/postcss-modules-local-by-default/download/postcss-modules-local-by-default-1.2.0.tgz#f7d80c398c5a393fa7964466bd19500a7d61c069"
   dependencies:
     css-selector-tokenizer "^0.7.0"
     postcss "^6.0.1"
 
-postcss-modules-scope@1.1.0, postcss-modules-scope@^1.1.0:
+postcss-modules-scope@1.1.0, postcss-modules-scope@^1.0.2, postcss-modules-scope@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-1.1.0.tgz#d6ea64994c79f97b62a72b426fbe6056a194bb90"
   dependencies:
     css-selector-tokenizer "^0.7.0"
     postcss "^6.0.1"
+
+postcss-modules-sync@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/postcss-modules-sync/-/postcss-modules-sync-1.0.0.tgz#619a719cf78dd16a4834135140b324cf77334be1"
+  dependencies:
+    generic-names "^1.0.2"
+    icss-replace-symbols "^1.0.2"
+    postcss "^5.2.5"
+    postcss-modules-local-by-default "^1.1.1"
+    postcss-modules-scope "^1.0.2"
+    string-hash "^1.1.0"
 
 postcss-modules-values@1.3.0, postcss-modules-values@^1.3.0:
   version "1.3.0"
@@ -5377,7 +5397,7 @@ postcss@6.0.1:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16, postcss@^5.2.5:
   version "5.2.18"
   resolved "http://registry.npm.taobao.org/postcss/download/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   dependencies:
@@ -5386,7 +5406,7 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.20, postcss@^6.0.21, postcss@^6.0.8:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.20, postcss@^6.0.21, postcss@^6.0.22, postcss@^6.0.8:
   version "6.0.22"
   resolved "http://registry.npm.taobao.org/postcss/download/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
   dependencies:
@@ -5530,7 +5550,7 @@ querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/querystring-es3/download/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
 
-querystring@0.2.0:
+querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/querystring/download/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
@@ -6003,6 +6023,19 @@ rollup-plugin-uglify@^3.0.0:
   dependencies:
     uglify-es "^3.3.7"
 
+rollup-plugin-vue@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.npmjs.org/rollup-plugin-vue/-/rollup-plugin-vue-4.1.4.tgz#e154d3bc1e2575ad15e8f2ec6456ef93e516d9bc"
+  dependencies:
+    "@babel/runtime" "^7.0.0-beta.46"
+    "@vue/component-compiler" "^3.3.2"
+    "@vue/component-compiler-utils" "^1.2.1"
+    debug "^2.6.0"
+    hash-sum "^1.0.2"
+    postcss "^6.0.22"
+    querystring "^0.2.0"
+    rollup-pluginutils "^2.0.1"
+
 rollup-pluginutils@^2.0.1:
   version "2.2.0"
   resolved "http://registry.npm.taobao.org/rollup-pluginutils/download/rollup-pluginutils-2.2.0.tgz#64ba3f29988b84322bafa188a9f99ca731c95354"
@@ -6473,7 +6506,7 @@ strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/strict-uri-encode/download/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
 
-string-hash@^1.1.1:
+string-hash@^1.1.0, string-hash@^1.1.1:
   version "1.1.3"
   resolved "http://registry.npm.taobao.org/string-hash/download/string-hash-1.1.3.tgz#e8aafc0ac1855b4666929ed7dd1275df5d6c811b"
 
