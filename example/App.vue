@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-      <el-footer>
-        <hr>
-        <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
-      </el-footer>
-    </el-container>
+    <div class="header">Header</div>
+    <div class="main">Main</div>
+    <div class="footer">
+      <hr>
+      <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
+    </div>
   </div>
 </template>
 
@@ -57,18 +55,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-footer {
+.footer {
   text-align: center;
 }
 
-.el-header {
+.header {
   background-color: #B3C0D1;
   color: #333;
   text-align: center;
   line-height: 60px;
 }
 
-.el-main {
+.main {
   background-color: #E9EEF3;
   color: #333;
   text-align: center;

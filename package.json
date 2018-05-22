@@ -9,12 +9,14 @@
   "repository": "https://github.com/YunYouJun/vue-copyright.git",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
-  "dependencies": {},
   "scripts": {
     "dev": "npm run example",
     "build": "bili src/index.js --plugin vue --format umd,umd-min,cjs,es --exports named --module-name VueAboutMe",
     "prepublish": "npm run build",
-    "example": "poi example/index.js"
+    "example": "poi example/index.js",
+    "build:example": "poi build example/index.js --out-dir example/dist --public-path ./ --source-map false",
+    "predeploy": "npm run build:example",
+    "deploy": "gh-pages -d example/dist"
   },
   "keywords": [
     "about",
@@ -27,6 +29,7 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-free-regular": "^5.0.13",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "babel-plugin-component": "^1.1.1",
     "bili": "^3.1.1",
     "element-theme-ink": "^0.1.5",
     "element-ui": "^2.3.9",
@@ -34,5 +37,6 @@
     "poi": "^10.1.9",
     "rollup-plugin-vue": "^4.1.4",
     "sass-loader": "^7.0.1"
-  }
+  },
+  "dependencies": {}
 }
