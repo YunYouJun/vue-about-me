@@ -1,6 +1,6 @@
 {
   "name": "vue-about-me",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Use Vue Element Display Copyright",
   "main": "dist/vue-about-me.min.js",
   "files": [
