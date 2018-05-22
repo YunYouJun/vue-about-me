@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="vue-about-me" class="container">
     <div class="copyright">
       {{ copyright.name?copyright.name:copyright.repoName }} <i :class="copyright.logo"></i> {{ copyright.author }}
     </div>
@@ -28,11 +28,13 @@ export default {
   props: {
     copyright: {
       type: Object,
-      default: {
-        name: 'Vue About Me',
-        repoName: 'Vue-About-Me',
-        author: 'YunYouJun',
-        logo: 'fas fa-cloud'
+      default: function () {
+        return {
+          name: 'Vue About Me',
+          repoName: 'Vue-About-Me',
+          author: 'YunYouJun',
+          logo: 'fas fa-cloud'
+        }
       }
     },
     links: {
@@ -88,36 +90,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  text-align: center;
-}
+#vue-about-me {
+  .container {
+    text-align: center;
+  }
 
-.copyright {
-  font-size: .9rem;
-  padding-bottom: 10px;
-}
+  .copyright {
+    font-size: .9rem;
+    padding-bottom: 10px;
+  }
 
-.link-item {
-  display: inline-block;
-  font-size: 1rem;
-  color: #000;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 2rem;
-  transition: .3s;
-  align-content: center;
-  line-height: 2rem;
-  border-radius: 2rem;
-  margin: 5px;
+  .link-item {
+    display: inline-block;
+    font-size: 1rem;
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 2rem;
+    transition: .3s;
+    align-content: center;
+    line-height: 2rem;
+    border-radius: 2rem;
+    margin: 5px;
 
-  width: 2rem;
+    width: 2rem;
 
-  &:hover {
-    transform: scale(1.2);
-    color: #fff !important;
-    text-shadow: 0px 0px 1px #000;
+    &:hover {
+      transform: scale(1.2);
+      color: #fff !important;
+      text-shadow: 0px 0px 1px #000;
+    }
   }
 }
 </style>
