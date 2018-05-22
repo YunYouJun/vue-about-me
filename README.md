@@ -39,7 +39,8 @@ links | 显示链接 | Array[Object] | —— |
 
 Attribute | Description | Type | Options | Default
 ---|---|---|---|---
-projectName | 项目名称 | string | —— | Vue-About-Me
+name | 名称 | string | Vue About Me
+repoName | 项目仓库名称 | string | —— | Vue-About-Me
 author | 作者 | string | —— | YunYouJun
 logo | 图标（class） | string | —— | fas fa-cloud
 
@@ -54,3 +55,7 @@ color | 颜色 | | —— |
 icon | 图标 | | —— |
 label | 标签提示 | | —— |
 href | 链接 | | —— |
+
+#### GitHub Item
+
+Default: `https://github.com/author/repoName`

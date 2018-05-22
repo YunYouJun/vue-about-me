@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="copyright">
-      {{ copyright.projectName }} <i :class="copyright.logo"></i> {{ copyright.author }}
+      {{ copyright.name?copyright.name:copyright.repoName }} <i :class="copyright.logo"></i> {{ copyright.author }}
     </div>
     <div class="link">
       <el-tooltip 
@@ -29,7 +29,8 @@ export default {
     copyright: {
       type: Object,
       default: {
-        projectName: 'Vue-About-Me',
+        name: 'Vue About Me',
+        repoName: 'Vue-About-Me',
         author: 'YunYouJun',
         logo: 'fas fa-cloud'
       }
@@ -43,7 +44,7 @@ export default {
             color: 'black',
             icon: 'fab fa-github',
             label: 'GitHub 项目代码',
-            href: 'https://github.com/YunYouJun/vue-about-me'
+            href: 'https://github.com/' + this.copyright.author + '/' + this.copyright.repoName
           },
           {
             name: 'weibo',

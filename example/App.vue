@@ -15,7 +15,8 @@ export default {
   data () {
     return {
       copyright: {
-        projectName: 'Vue-About-Me',
+        name: 'Vue About Me',
+        repoName: 'Vue-About-Me',
         author: 'YunYouJun',
         logo: 'fas fa-cloud'
       },
