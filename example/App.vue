@@ -3,7 +3,6 @@
     <div class="header">Header</div>
     <div class="main">Main</div>
     <div class="footer">
-      <hr>
       <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
     </div>
   </div>
@@ -18,7 +17,9 @@ export default {
         name: 'Vue About Me',
         repoName: 'Vue-About-Me',
         author: 'YunYouJun',
-        logo: 'fas fa-cloud'
+        logo: 'fas fa-cloud',
+        link: 'http://github.yunyoujun.cn/vue-about-me/',
+        color: '#0078E7'
       },
       links: [
         {
@@ -58,6 +59,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   text-align: center;
+  background-color: rgb(209, 232, 255);
 }
 
 .header {

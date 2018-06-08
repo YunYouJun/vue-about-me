@@ -1,7 +1,11 @@
 <template>
-  <div id="vue-about-me" class="container">
+  <div id="vue-about-me">
     <div class="copyright">
-      {{ copyright.name?copyright.name:copyright.repoName }} <i :class="copyright.logo"></i> {{ copyright.author }}
+      {{ copyright.name?copyright.name:copyright.repoName }}
+      <a :href="copyright.link" :style="{'color': copyright.color}">
+      <i :class="'logo ' + copyright.logo"></i>
+      </a>
+      {{ copyright.author }}
     </div>
     <div class="link">
       <el-tooltip 
@@ -11,7 +15,7 @@
       placement="top"
       >
         <a class="link-item" ref="link"
-        :style="{color: link.color, borderColor: link.color}"
+        :style="{color: link.color, borderColor: link.color, backgroundColor: link.backgroundColor}"
         :href="link.href" target="_blank"
         @mouseover="hoverStyle(index, link.color)"
         @mouseout="resetStyle(index)">
@@ -33,7 +37,9 @@ export default {
           name: 'Vue About Me',
           repoName: 'Vue-About-Me',
           author: 'YunYouJun',
-          logo: 'fas fa-cloud'
+          logo: 'fas fa-cloud',
+          link: '#',
+          color: 'black'
         }
       }
     },
@@ -83,7 +89,11 @@ export default {
       this.$refs.link[index].style.backgroundColor = color
     },
     resetStyle (index) {
-      this.$refs.link[index].style.backgroundColor = 'white'
+      let backgroundColor = 'transparent'
+      if (this.links[index].backgroundColor) {
+        backgroundColor = this.links[index].backgroundColor
+      }
+      this.$refs.link[index].style.backgroundColor = backgroundColor
     }
   }
 }
@@ -91,13 +101,18 @@ export default {
 
 <style lang="scss" scoped>
 #vue-about-me {
-  .container {
-    text-align: center;
-  }
-
+  text-align: center;
+  padding: 10px;
   .copyright {
-    font-size: .9rem;
+    font-size: 1rem;
     padding-bottom: 10px;
+    .logo {
+      padding: 0px 5px;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 
   .link-item {
