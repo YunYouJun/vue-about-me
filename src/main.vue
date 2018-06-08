@@ -2,7 +2,7 @@
   <div id="vue-about-me">
     <div class="copyright">
       {{ copyright.name?copyright.name:copyright.repoName }}
-      <a :href="copyright.link" :style="{'color': copyright.color}">
+      <a :href="copyright.link" :style="{color: copyright.color}">
       <i :class="'logo ' + copyright.logo"></i>
       </a>
       {{ copyright.author }}

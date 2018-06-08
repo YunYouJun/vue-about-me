@@ -1,5 +1,10 @@
 # vue-about-me
 
+![npm](https://img.shields.io/npm/v/vue-about-me.svg?style=for-the-badge)
+![npm](https://img.shields.io/npm/dt/vue-about-me.svg?style=for-the-badge)
+![npm](https://img.shields.io/npm/l/vue-about-me.svg?style=for-the-badge)
+![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-about-me.svg?style=for-the-badge)
+
 Display copyright and some links about me.
 
 Tooltip use [element-ui](http://element.eleme.io/#/zh-CN)
@@ -22,7 +27,21 @@ Vue.use(VueAboutMe)
 
 ### Icon
 
+You need have custom icon class name.
 You can use [iconfont](http://iconfont.cn/).
+
+#### Example
+
+```js
+links: [
+  {
+    // ...
+    icon: 'iconfont icon-cloud'
+    // ...
+  }
+]
+
+```
 
 ### Template
 
@@ -31,6 +50,10 @@ You can use [iconfont](http://iconfont.cn/).
 ```
 
 You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/example) folder for more details.
+
+## Intend
+
+- [ ] Use [iconfont](http://iconfont.cn/) to replace Font-Awesome.
 
 ## Options
 
@@ -52,7 +75,12 @@ color     | 图标颜色    | string | —— | #0078E7
 
 ### links
 
-Every Link Object
+Name|Type
+---|---
+links | Array
+link | Object
+
+#### link
 
 Attribute | Description | Type | Options | Default
 ---       |---|---|---|---
