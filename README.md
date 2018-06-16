@@ -7,7 +7,10 @@
 
 Display copyright and some links about me.
 
-Tooltip use [element-ui](http://element.eleme.io/#/zh-CN)
+Tooltip Consider:
+
+- [tippyjs](https://github.com/atomiks/tippyjs)
+- [v-tooltip](https://github.com/Akryum/v-tooltip)
 
 [Online Demo](https://github.yunyoujun.cn/vue-about-me/)
 
