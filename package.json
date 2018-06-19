@@ -38,5 +38,7 @@
     "rollup-plugin-vue": "^4.1.4",
     "sass-loader": "^7.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "v-tooltip": "^2.0.0-rc.33"
+  }
 }

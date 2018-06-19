@@ -1,4 +1,8 @@
 import Vue from 'vue'
+import VTooltip from 'v-tooltip'
+
+Vue.use(VTooltip)
+
 import { Tooltip } from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
 import 'element-theme-ink/lib/reset.css'

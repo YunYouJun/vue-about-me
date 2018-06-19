@@ -9,6 +9,8 @@ Display copyright and some links about me.
 
 Tooltip Consider:
 
+- [popper](https://github.com/FezVrasta/popper.js)
+- [hint.css](https://github.com/chinchang/hint.css)
 - [tippyjs](https://github.com/atomiks/tippyjs)
 - [v-tooltip](https://github.com/Akryum/v-tooltip)
 
