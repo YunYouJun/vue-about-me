@@ -7,12 +7,8 @@
 
 Display copyright and some links about me.
 
-Tooltip Consider:
-
-- [popper](https://github.com/FezVrasta/popper.js)
-- [hint.css](https://github.com/chinchang/hint.css)
-- [tippyjs](https://github.com/atomiks/tippyjs)
-- [v-tooltip](https://github.com/Akryum/v-tooltip)
+Use [v-tooltip](https://github.com/Akryum/v-tooltip),
+You can override the style of tooltip by reference to [v-tooltip](https://github.com/Akryum/v-tooltip#style-examples).
 
 [Online Demo](https://github.yunyoujun.cn/vue-about-me/)
 
@@ -21,13 +17,17 @@ Tooltip Consider:
 ### Import
 
 ```js
+// Because use vTooltip
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+// if you need Global Registration
+// You can write it in your index.js/main.js
 import VueAboutMe from 'vue-about-me'
+Vue.use(VueAboutMe)
 ```
 
 ```js
-// if you need Global Registration
-// You can write it in your index.js/main.js
-Vue.use(VueAboutMe)
+
 ```
 
 ### Icon
@@ -56,10 +56,6 @@ links: [
 
 You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/example) folder for more details.
 
-## Intend
-
-- [ ] Use [iconfont](http://iconfont.cn/) to replace Font-Awesome.
-
 ## Options
 
 Attribute | Description | Type | Options | Default
@@ -74,7 +70,7 @@ Attribute | Description | Type | Options | Default
 name      | 名称        | string | Vue About Me
 repoName  | 项目仓库名称 | string | —— | Vue-About-Me
 author    | 作者        | string | —— | YunYouJun
-logo      | 图标(class) | string | —— | fas fa-cloud
+logo      | 图标(class) | string | —— | #icon-cloud
 link      | 图标链接    | string | —— | #
 color     | 图标颜色    | string | —— | #0078E7
 

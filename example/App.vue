@@ -17,7 +17,7 @@ export default {
         name: 'Vue About Me',
         repoName: 'Vue-About-Me',
         author: 'YunYouJun',
-        logo: 'fas fa-cloud',
+        logo: '#icon-cloud',
         link: 'http://github.yunyoujun.cn/vue-about-me/',
         color: '#0078E7'
       },
@@ -25,28 +25,28 @@ export default {
         {
           name: 'github',
           color: 'black',
-          icon: 'fab fa-github',
+          icon: '#icon-github',
           label: 'GitHub 项目代码',
           href: 'https://github.com/YunYouJun/vue-about-me'
         },
         {
           name: 'weibo',
           color: '#DB2828',
-          icon: 'fab fa-weibo',
+          icon: '#icon-weibo',
           label: '微博：机智的云游君',
           href: 'http://weibo.com/jizhideyunyoujun'
         },
         {
           name: 'email',
           color: '#409EFF',
-          icon: 'fas fa-envelope',
+          icon: '#icon-envelope',
           label: '邮箱：me@yunyoujun.cn',
           href: 'mailto:me@yunyoujun.cn'
         },
         {
           name: 'blog',
           color: '#6435C9',
-          icon: 'fas fa-globe',
+          icon: '#icon-globe',
           label: '博客：yunyoujun.cn',
           href: 'http://www.yunyoujun.cn'
         },
@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .footer {
   text-align: center;
   background-color: rgb(209, 232, 255);

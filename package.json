@@ -1,12 +1,12 @@
 {
   "name": "vue-about-me",
   "version": "0.0.5",
-  "description": "Use Vue Element Display Copyright",
+  "description": "Use Vue Element Display About Me Info",
   "main": "dist/vue-about-me.min.js",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/YunYouJun/vue-copyright.git",
+  "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
@@ -19,20 +19,16 @@
     "deploy": "gh-pages -d example/dist"
   },
   "keywords": [
+    "vue",
     "about",
     "me",
     "link",
-    "vue"
+    "copyright"
   ],
   "devDependencies": {
-    "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/fontawesome-free-brands": "^5.0.13",
-    "@fortawesome/fontawesome-free-regular": "^5.0.13",
-    "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "babel-plugin-component": "^1.1.1",
     "bili": "^3.1.1",
-    "element-theme-ink": "^0.1.5",
-    "element-ui": "^2.3.9",
+    "element-theme-ink": "^1.0.0",
     "node-sass": "^4.9.0",
     "poi": "^10.1.9",
     "rollup-plugin-vue": "^4.1.4",
