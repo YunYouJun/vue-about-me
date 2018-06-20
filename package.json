@@ -10,13 +10,13 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "dev": "npm run example",
     "build": "bili src/index.js --plugin vue --format umd,umd-min,cjs,es --exports named --module-name VueAboutMe",
-    "prepublish": "npm run build",
-    "example": "poi example/index.js",
     "build:example": "poi build example/index.js --out-dir example/dist --public-path ./ --source-map false",
-    "predeploy": "npm run build:example",
-    "deploy": "gh-pages -d example/dist"
+    "dev": "npm run example",
+    "deploy": "gh-pages -d example/dist",
+    "example": "poi example/index.js",
+    "prepublish": "npm run build",
+    "predeploy": "npm run build:example"
   },
   "keywords": [
     "vue",
