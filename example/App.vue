@@ -9,8 +9,12 @@
 </template>
 
 <script>
+import 'element-theme-ink/lib/reset.css'
+import VueAboutMe from '../src/App.vue'
+// import '../dist/VueAboutMe.umd.js'
+
 export default {
-  props: [],
+  name: 'example',
   data () {
     return {
       copyright: {
@@ -18,7 +22,8 @@ export default {
         repoName: 'Vue-About-Me',
         author: 'YunYouJun',
         logo: '#icon-cloud',
-        link: 'http://github.yunyoujun.cn/vue-about-me/',
+        // logo: 'https://cn.vuejs.org/images/logo.png',
+        link: 'https://yunyoujun.github.io/vue-about-me/',
         color: '#0078E7'
       },
       links: [
@@ -52,6 +57,9 @@ export default {
         },
       ]
     }
+  },
+  components: {
+    VueAboutMe
   }
 }
 </script>
@@ -73,6 +81,6 @@ export default {
   background-color: #E9EEF3;
   color: #333;
   text-align: center;
-  line-height: 160px;
+  line-height: 444px;
 }
 </style>

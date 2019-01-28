@@ -3,30 +3,42 @@
     <div class="copyright">
       {{ copyright.name?copyright.name:copyright.repoName }}
       <a :href="copyright.link" :style="{color: copyright.color}">
-        <svg class="logo" aria-hidden="true">
+        <template v-if="copyright.logo.indexOf('#icon-')!==-1">
+          <svg class="logo" aria-hidden="true">
             <use :xlink:href="copyright.logo"></use>
-        </svg>
+          </svg>
+        </template>
+        <template v-else>
+          <img class="logo" :alt="copyright.logo" :src="copyright.logo">
+        </template>
       </a>
       {{ copyright.author }}
     </div>
     <div class="link">
-      <a class="link-item" ref="link"
-      v-for="(link, index) in links" 
-      :key="index"
-      v-tooltip.top-center="link.label"
-      :style="{color: link.color, borderColor: link.color, backgroundColor: link.backgroundColor}"
-      :href="link.href" target="_blank"
-      @mouseover="hoverStyle(index, link.color)"
-      @mouseout="resetStyle(index)">
-        <svg class="icon" aria-hidden="true">
-            <use :xlink:href="link.icon"></use>
-        </svg>
-      </a>
+      <v-popover 
+        v-for="(link, index) in links" 
+        trigger="hover"
+        :key="index"
+        :placement="placement">
+        <a class="link-item" ref="link"
+        :style="{color: link.color, borderColor: link.color, backgroundColor: link.backgroundColor}"
+        :href="link.href" target="_blank"
+        @mouseover="hoverStyle(index, link.color)"
+        @mouseout="resetStyle(index)">
+          <svg class="icon" aria-hidden="true">
+              <use :xlink:href="link.icon"></use>
+          </svg>
+        </a>
+        <template slot="popover">
+          <span>{{ link.label }}</span>
+        </template>
+      </v-popover>
     </div>
   </div>
 </template>
 
 <script>
+import { VPopover } from 'v-tooltip'
 export default {
   name: 'VueAboutMe',
   props: {
@@ -79,10 +91,13 @@ export default {
       }
     }
   },
-  data () {
+  data() {
     return {
-
+      placement: 'top'
     }
+  },
+  components: {
+    VPopover
   },
   methods: {
     hoverStyle (index, color) {
@@ -99,14 +114,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.icon {
-  width: 1em; height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
-
+<style lang="scss">
 #vue-about-me {
   text-align: center;
   padding: 10px;
@@ -139,8 +147,7 @@ export default {
     border-radius: 2rem;
     transition: .3s;
     align-content: center;
-    line-height: 2rem;
-    border-radius: 2rem;
+    line-height: 2em;
     margin: 5px;
 
     width: 2rem;
@@ -150,17 +157,27 @@ export default {
       color: #fff !important;
       text-shadow: 0px 0px 1px #000;
     }
+
+    .icon {
+      width: 1em; height: 1em;
+      vertical-align: -0.1em;
+      fill: currentColor;
+      overflow: hidden;
+    }
   }
 }
-</style>
 
-<style lang="scss">
+// v-tooltip
+.v-popover {
+  display: inline;
+}
+
 .tooltip {
   display: block !important;
   z-index: 10000;
 
   .tooltip-inner {
-    background: rgba(0, 0, 0, 0.8);
+    background: black;
     color: white;
     border-radius: 16px;
     padding: 5px 10px 4px;
@@ -172,12 +189,12 @@ export default {
     border-style: solid;
     position: absolute;
     margin: 5px;
-    border-color: rgba(0, 0, 0, 0.8);
+    border-color: black;
     z-index: 1;
   }
 
   &[x-placement^="top"] {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     .tooltip-arrow {
       border-width: 5px 5px 0 5px;
@@ -233,6 +250,22 @@ export default {
       top: calc(50% - 5px);
       margin-left: 0;
       margin-right: 0;
+    }
+  }
+
+  &.popover {
+    $color: rgba(0, 0, 0, 0.9);
+
+    .popover-inner {
+      background: $color;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+    }
+
+    .popover-arrow {
+      border-color: $color;
     }
   }
 

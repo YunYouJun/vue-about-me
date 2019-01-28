@@ -2,7 +2,7 @@
   "name": "vue-about-me",
   "version": "0.0.5",
   "description": "Use Vue Element Display About Me Info",
-  "main": "dist/vue-about-me.min.js",
+  "main": "dist/vue-about-me.umd.min.js",
   "files": [
     "dist"
   ],
@@ -10,13 +10,13 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "bili src/index.js --plugin vue --format umd,umd-min,cjs,es --exports named --module-name VueAboutMe",
-    "build:example": "poi build example/index.js --out-dir example/dist --public-path ./ --source-map false",
-    "dev": "npm run example",
+    "build": "vue-cli-service build --target lib --name VueAboutMe",
+    "build:example": "vue-cli-service build --dest example/dist example/index.js",
     "deploy": "gh-pages -d example/dist",
-    "example": "poi example/index.js",
-    "prepublish": "npm run build",
-    "predeploy": "npm run build:example"
+    "example": "yarn serve",
+    "prepublish": "yarn build",
+    "predeploy": "yarn run build:example",
+    "serve": "vue-cli-service serve"
   },
   "keywords": [
     "vue",
@@ -26,15 +26,15 @@
     "copyright"
   ],
   "devDependencies": {
-    "babel-plugin-component": "^1.1.1",
-    "bili": "^3.1.1",
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-service": "^3.3.1",
     "element-theme-ink": "^1.0.0",
     "node-sass": "^4.9.0",
-    "poi": "^10.1.9",
-    "rollup-plugin-vue": "^4.1.4",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.22"
   },
   "dependencies": {
-    "v-tooltip": "^2.0.0-rc.33"
+    "v-tooltip": "^2.0.0-rc.33",
+    "vue": "^2.5.22"
   }
 }

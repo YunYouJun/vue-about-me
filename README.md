@@ -7,45 +7,77 @@
 
 Display copyright and some links about me.
 
+[Online Demo](https://yunyoujun.github.io/vue-about-me/)
+
+## Base
+
+- [vue](https://cn.vuejs.org/)
+- [v-tooltip](https://github.com/Akryum/v-tooltip)
+
 Use [v-tooltip](https://github.com/Akryum/v-tooltip),
 You can override the style of tooltip by reference to [v-tooltip](https://github.com/Akryum/v-tooltip#style-examples).
-
-[Online Demo](https://github.yunyoujun.cn/vue-about-me/)
 
 ## How To Use
 
 ### Import
 
-```js
-// Because use vTooltip
-import VTooltip from 'v-tooltip'
-Vue.use(VTooltip)
-// if you need Global Registration
-// You can write it in your index.js/main.js
-import VueAboutMe from 'vue-about-me'
-Vue.use(VueAboutMe)
+You just need import it, and write it where you need.
+
+Example in vue component
+
+```html
+<template>
+  <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
+</template>
 ```
 
-```js
+`<script>`
 
+```js
+// use default name VueAboutMe
+import 'vue-about-me'
+
+export default {
+  components: {
+    VueAboutMe
+  }
+}
 ```
 
 ### Icon
 
 You need have custom icon class name.
-You can use [iconfont](http://iconfont.cn/).
+You can use [iconfont](https://iconfont.cn/).
+
+And add link in your `index.html`.
+
+Symbol link is recommend.
+
+```html
+<script src="//at.alicdn.com/t/font_699884_bg639cmqbbi.js"></script>
+<!-- you can use it or custom more icon in iconfont and get a new link-->
+```
 
 #### Example
 
 ```js
+copyright: {
+  name: 'Vue About Me',
+  repoName: 'Vue-About-Me',
+  author: 'YunYouJun',
+  logo: '#icon-cloud',
+  // or
+  // logo: 'https://cn.vuejs.org/images/logo.png',
+  link: 'https://yunyoujun.github.io/vue-about-me/',
+  color: '#0078E7'
+},
 links: [
   {
     // ...
-    icon: 'iconfont icon-cloud'
+    icon: '#icon-cloud'
     // ...
   }
 ]
-
 ```
 
 ### Template
@@ -70,7 +102,7 @@ Attribute | Description | Type | Options | Default
 name      | 名称        | string | Vue About Me
 repoName  | 项目仓库名称 | string | —— | Vue-About-Me
 author    | 作者        | string | —— | YunYouJun
-logo      | 图标(class) | string | —— | #icon-cloud
+logo      | 图标(class) | string | —— | #icon-cloud(img url is supported)
 link      | 图标链接    | string | —— | #
 color     | 图标颜色    | string | —— | #0078E7
 
