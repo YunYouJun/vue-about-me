@@ -156,6 +156,7 @@ export default {
 }
 
 // v-tooltip
+$tooltip-margin: 10px;
 .tooltip {
   display: block !important;
   z-index: 10000;
@@ -178,7 +179,7 @@ export default {
   }
 
   &[x-placement^="top"] {
-    margin-bottom: 5px;
+    margin-bottom: $tooltip-margin;
 
     .tooltip-arrow {
       border-width: 5px 5px 0 5px;
