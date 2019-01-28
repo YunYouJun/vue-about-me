@@ -7,7 +7,8 @@
 
 Display copyright and some links about me.
 
-[Online Demo](https://yunyoujun.github.io/vue-about-me/)
+- [Online Demo](https://yunyoujun.github.io/vue-about-me/)
+- [unpkg](https://unpkg.com/vue-about-me)
 
 ## Base
 

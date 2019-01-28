@@ -4,7 +4,11 @@
   "description": "Use Vue Element Display About Me Info",
   "main": "dist/vue-about-me.umd.min.js",
   "files": [
-    "dist"
+    "dist",
+    "example",
+    "src",
+    "README.zh-CN.md",
+    "vue.config.js"
   ],
   "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "author": "YunYouJun <me@yunyoujun.cn>",

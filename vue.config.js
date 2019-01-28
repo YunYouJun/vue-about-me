@@ -2,6 +2,11 @@ module.exports = {
   css: { 
     extract: false 
   },
+  configureWebpack: {
+    externals: {
+      VTooltip: 'v-tooltip'
+    }
+  },
   pages: {
     index: {
       entry: 'example/index.js',
