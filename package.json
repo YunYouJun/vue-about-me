@@ -2,7 +2,7 @@
   "name": "vue-about-me",
   "version": "0.2.0",
   "description": "Use Vue Element Display About Me Info",
-  "main": "dist/vue-about-me.umd.min.js",
+  "main": "dist/VueAboutMe.umd.min.js",
   "files": [
     "dist",
     "example",

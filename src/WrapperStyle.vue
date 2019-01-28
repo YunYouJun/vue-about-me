@@ -15,26 +15,31 @@
       {{ copyright.author }}
     </div>
     <div class="link">
-      <a 
-        ref="link"
-        class="link-item"
+      <v-popover 
         v-for="(link, index) in links" 
-        v-tooltip.top-center="link.label"
         trigger="hover"
         :key="index"
+        :placement="placement">
+        <a class="link-item" ref="link"
         :style="{color: link.color, borderColor: link.color, backgroundColor: link.backgroundColor}"
         :href="link.href" target="_blank"
         @mouseover="hoverStyle(index, link.color)"
         @mouseout="resetStyle(index)">
-        <svg class="icon" aria-hidden="true">
-          <use :xlink:href="link.icon"></use>
-        </svg>
-      </a>
+          <svg class="icon" aria-hidden="true">
+            <use :xlink:href="link.icon"></use>
+          </svg>
+        </a>
+        <template slot="popover">
+          <span>{{ link.label }}</span>
+        </template>
+      </v-popover>
     </div>
   </div>
 </template>
 
 <script>
+// import { VPopover } from 'v-tooltip'
+import { VPopover } from 'VTooltip'
 export default {
   name: 'VueAboutMe',
   props: {
@@ -86,6 +91,14 @@ export default {
         ]
       }
     }
+  },
+  data() {
+    return {
+      placement: 'top'
+    }
+  },
+  components: {
+    VPopover
   },
   methods: {
     hoverStyle (index, color) {
@@ -156,6 +169,10 @@ export default {
 }
 
 // v-tooltip
+.v-popover {
+  display: inline;
+}
+
 .tooltip {
   display: block !important;
   z-index: 10000;
@@ -238,12 +255,12 @@ export default {
   }
 
   &.popover {
-    $color: #f9f9f9;
+    $color: rgba(0, 0, 0, 0.9);
 
     .popover-inner {
       background: $color;
-      color: black;
-      padding: 24px;
+      color: white;
+      padding: 10px;
       border-radius: 5px;
       box-shadow: 0 5px 30px rgba(black, .1);
     }

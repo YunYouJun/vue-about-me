@@ -24,11 +24,23 @@ You can override the style of tooltip by reference to [v-tooltip](https://github
 
 You just need import it, and write it where you need.
 
-Example in vue component
+Example
+
+```js
+// index.js
+import Vue from 'vue'
+import App from './App.vue'
+...
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+```
 
 ```html
+<!-- component -->
 <template>
-  <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
+  <div>
+    <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
+  </div>
 </template>
 ```
 

@@ -10,8 +10,8 @@
 
 <script>
 import 'element-theme-ink/lib/reset.css'
-import VueAboutMe from '../src/App.vue'
-// import '../dist/VueAboutMe.umd.js'
+// import VueAboutMe from '../src/App.vue'
+import '../dist/VueAboutMe.umd.js'
 
 export default {
   name: 'example',
