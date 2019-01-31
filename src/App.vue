@@ -107,8 +107,8 @@ export default {
   text-align: center;
   padding: 10px;
   .copyright {
-    font-size: 1rem;
-    padding-bottom: 10px;
+    font-size: 1em;
+    padding-bottom: 5px;
     .logo {
       width: 1.5em;
       height: 1.5em;
@@ -126,29 +126,28 @@ export default {
 
   .link-item {
     display: inline-block;
-    font-size: 1rem;
+    font-size: 1em;
     color: #000;
     cursor: pointer;
     user-select: none;
     background-color: transparent;
     border: 1px solid #000;
-    border-radius: 2rem;
+    border-radius: 2em;
     transition: .3s;
     align-content: center;
     line-height: 2em;
     margin: 5px;
 
-    width: 2rem;
+    width: 2em;
 
     &:hover {
       transform: scale(1.2);
       color: #fff !important;
       text-shadow: 0px 0px 1px #000;
     }
-
     .icon {
       width: 1em; height: 1em;
-      vertical-align: -0.1em;
+      vertical-align: -0.15em;
       fill: currentColor;
       overflow: hidden;
     }
