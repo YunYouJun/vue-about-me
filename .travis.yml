@@ -14,6 +14,9 @@ install:
   - yarn
   - yarn build:example
 
+script:
+  - echo "Skipping tests"
+
 deploy:
   provider: pages
   skip-cleanup: true
