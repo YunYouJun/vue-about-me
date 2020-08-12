@@ -1,20 +1,19 @@
 {
   "name": "vue-about-me",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Use Vue Element Display About Me Info",
   "main": "dist/VueAboutMe.umd.min.js",
   "files": [
     "dist",
     "example",
     "src",
-    "README.zh-CN.md",
     "vue.config.js"
   ],
   "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name VueAboutMe",
+    "build": "vue-cli-service build --target lib --name VueAboutMe && yarn build:example",
     "build:example": "vue-cli-service build --dest example/dist example/index.js",
     "deploy": "gh-pages -d example/dist",
     "example": "yarn serve",
@@ -30,15 +29,14 @@
     "copyright"
   ],
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.3.0",
-    "@vue/cli-service": "^3.3.1",
-    "element-theme-ink": "^1.0.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.22"
+    "@vue/cli-plugin-babel": "^4.5.3",
+    "@vue/cli-service": "^4.5.3",
+    "sass-loader": "^9.0.3",
+    "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "v-tooltip": "^2.0.0-rc.33",
-    "vue": "^2.5.22"
+    "sass": "^1.26.10",
+    "v-tooltip": "^2.0.3",
+    "vue": "^2.6.11"
   }
 }

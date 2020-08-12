@@ -48,13 +48,13 @@ Vue.use(VTooltip)
 
 ```js
 // use default name VueAboutMe
-import 'vue-about-me'
+import "vue-about-me";
 
 export default {
   components: {
-    VueAboutMe
-  }
-}
+    VueAboutMe,
+  },
+};
 ```
 
 ### Icon
@@ -67,7 +67,7 @@ And add link in your `index.html`.
 Symbol link is recommend.
 
 ```html
-<script src="//at.alicdn.com/t/font_699884_bg639cmqbbi.js"></script>
+<script src="//at.alicdn.com/t/font_699884_hy52mxs5pya.js"></script>
 <!-- you can use it or custom more icon in iconfont and get a new link-->
 ```
 
@@ -103,39 +103,39 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 
 ## Options
 
-Attribute | Description | Type | Options | Default
-  ---     |---          | ---  |---      |---
-copyright | 显示版权    | Object | —— |
-links     | 显示链接    | Array[Object] | —— |
+| Attribute | Description | Type          | Options | Default |
+| --------- | ----------- | ------------- | ------- | ------- |
+| copyright | 显示版权    | Object        | ——      |
+| links     | 显示链接    | Array[Object] | ——      |
 
 ### copyright
 
-Attribute | Description | Type | Options | Default
----       | ---         |---|---|---
-name      | 名称        | string | Vue About Me
-repoName  | 项目仓库名称 | string | —— | Vue-About-Me
-author    | 作者        | string | —— | YunYouJun
-logo      | 图标(class) | string | —— | #icon-cloud(img url is supported)
-link      | 图标链接    | string | —— | #
-color     | 图标颜色    | string | —— | #0078E7
+| Attribute | Description  | Type   | Options      | Default                           |
+| --------- | ------------ | ------ | ------------ | --------------------------------- |
+| name      | 名称         | string | Vue About Me |
+| repoName  | 项目仓库名称 | string | ——           | Vue-About-Me                      |
+| author    | 作者         | string | ——           | YunYouJun                         |
+| logo      | 图标(class)  | string | ——           | #icon-cloud(img url is supported) |
+| link      | 图标链接     | string | ——           | #                                 |
+| color     | 图标颜色     | string | ——           | #0078E7                           |
 
 ### links
 
-Name|Type
----|---
-links | Array
-link | Object
+| Name  | Type   |
+| ----- | ------ |
+| links | Array  |
+| link  | Object |
 
 #### link
 
-Attribute | Description | Type | Options | Default
----       |---|---|---|---
-name      | 名称 | | —— |
-color     | 颜色 | | —— |
-backgroundColor | 背景颜色 | | —— | transparent
-icon      | 图标 | | —— |
-label     | 标签提示 | | —— |
-href      | 链接 | | —— |
+| Attribute       | Description | Type | Options | Default     |
+| --------------- | ----------- | ---- | ------- | ----------- |
+| name            | 名称        |      | ——      |
+| color           | 颜色        |      | ——      |
+| backgroundColor | 背景颜色    |      | ——      | transparent |
+| icon            | 图标        |      | ——      |
+| label           | 标签提示    |      | ——      |
+| href            | 链接        |      | ——      |
 
 #### GitHub Item
 

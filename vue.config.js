@@ -1,22 +1,23 @@
 module.exports = {
-  css: { 
-    extract: false 
+  css: {
+    extract: false,
   },
   configureWebpack: {
+    output: {
+      libraryExport: "default",
+    },
     externals: {
-      VTooltip: 'v-tooltip'
-    }
+      VTooltip: "v-tooltip",
+    },
   },
   pages: {
     index: {
-      entry: 'example/index.js',
-      template: 'example/index.html',
-      filename: 'index.html',
-      title: 'Vue-About-Me',
-      chunks: ['chunk-vendors', 'chunk-common', 'index']
-    }
+      entry: "example/index.js",
+      template: "example/index.html",
+      filename: "index.html",
+      title: "Vue-About-Me",
+      chunks: ["chunk-vendors", "chunk-common", "index"],
+    },
   },
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue-about-me/'
-    : '/'
-}
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-about-me/" : "/",
+};

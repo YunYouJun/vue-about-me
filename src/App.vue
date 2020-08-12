@@ -1,31 +1,44 @@
 <template>
   <div id="vue-about-me">
     <div class="copyright">
-      {{ copyright.name?copyright.name:copyright.repoName }}
-      <a :href="copyright.link" :style="{color: copyright.color}">
-        <template v-if="copyright.logo.indexOf('#icon-')!==-1">
+      <template v-if="copyright.author && copyright.repo">
+        <a
+          :href="`https://github.com/${copyright.author}/${copyright.repo}`"
+          target="_blank"
+        >
+          {{ copyright.name ? copyright.name : copyright.repoName }}
+        </a>
+      </template>
+      <a :href="copyright.link" :style="{ color: copyright.color }">
+        <template v-if="copyright.logo.indexOf('#icon-') !== -1">
           <svg class="logo" aria-hidden="true">
             <use :xlink:href="copyright.logo"></use>
           </svg>
         </template>
         <template v-else>
-          <img class="logo" :alt="copyright.logo" :src="copyright.logo">
+          <img class="logo" :alt="copyright.logo" :src="copyright.logo" />
         </template>
       </a>
       {{ copyright.author }}
     </div>
     <div class="link">
-      <a 
+      <a
         ref="link"
         class="link-item"
-        v-for="(link, index) in links" 
+        v-for="(link, index) in links"
         v-tooltip.top-center="link.label"
         trigger="hover"
         :key="index"
-        :style="{color: link.color, borderColor: link.color, backgroundColor: link.backgroundColor}"
-        :href="link.href" target="_blank"
+        :style="{
+          color: link.color,
+          borderColor: link.color,
+          backgroundColor: link.backgroundColor,
+        }"
+        :href="link.href"
+        target="_blank"
         @mouseover="hoverStyle(index, link.color)"
-        @mouseout="resetStyle(index)">
+        @mouseout="resetStyle(index)"
+      >
         <svg class="icon" aria-hidden="true">
           <use :xlink:href="link.icon"></use>
         </svg>
@@ -36,76 +49,95 @@
 
 <script>
 export default {
-  name: 'VueAboutMe',
+  name: "VueAboutMe",
   props: {
     copyright: {
       type: Object,
-      default: function () {
+      default: function() {
         return {
-          name: 'Vue About Me',
-          repoName: 'Vue-About-Me',
-          author: 'YunYouJun',
-          logo: '#icon-cloud',
-          link: '#',
-          color: 'black'
-        }
-      }
+          name: "Vue About Me",
+          repo: "Vue-About-Me",
+          author: "YunYouJun",
+          logo: "#icon-cloud-line",
+          link: "#",
+          color: "black",
+        };
+      },
     },
     links: {
       type: Array,
-      default: function () {
+      default: function() {
         return [
           {
-            name: 'github',
-            color: 'black',
-            icon: '#icon-github',
-            label: 'GitHub 项目代码',
-            href: 'https://github.com/' + this.copyright.author + '/' + this.copyright.repoName
+            name: "github",
+            color: "black",
+            icon: "#icon-github-line",
+            label: "GitHub: YunYouJun",
+            href: `https://github.com/${this.copyright.author}`,
           },
           {
-            name: 'weibo',
-            color: '#DB2828',
-            icon: '#icon-weibo',
-            label: '微博：机智的云游君',
-            href: 'http://weibo.com/jizhideyunyoujun'
+            name: "telegram",
+            color: "#1da1f2",
+            icon: "#icon-telegram-line",
+            label: "Telegram Channel: El Psy Congroo",
+            href: "https://t.me/elpsycn",
           },
           {
-            name: 'email',
-            color: '#409EFF',
-            icon: '#icon-envelope',
-            label: '邮箱：me@yunyoujun.cn',
-            href: 'mailto:me@yunyoujun.cn'
+            name: "weibo",
+            color: "#DB2828",
+            icon: "#icon-weibo-line",
+            label: "微博：机智的云游君",
+            href: "http://weibo.com/jizhideyunyoujun",
           },
           {
-            name: 'blog',
-            color: '#6435C9',
-            icon: '#icon-globe',
-            label: '博客：yunyoujun.cn',
-            href: 'http://www.yunyoujun.cn'
+            name: "twitter",
+            color: "#1da1f2",
+            icon: "#icon-twitter-line",
+            label: "Twitter: YunYouJun",
+            href: "https://twitter.com/YunYouJun",
           },
-        ]
-      }
-    }
+          // {
+          //   name: "email",
+          //   color: "#409EFF",
+          //   icon: "#icon-mail-line",
+          //   label: "E-mail：me@yunyoujun.cn",
+          //   href: "mailto:me@yunyoujun.cn",
+          // },
+          {
+            name: "blog",
+            color: "#6435C9",
+            icon: "#icon-global-line",
+            label: "博客：yunyoujun.cn",
+            href: "http://www.yunyoujun.cn",
+          },
+        ];
+      },
+    },
   },
   methods: {
-    hoverStyle (index, color) {
-      this.$refs.link[index].style.backgroundColor = color
+    hoverStyle(index, color) {
+      this.$refs.link[index].style.backgroundColor = color;
     },
-    resetStyle (index) {
-      let backgroundColor = 'transparent'
+    resetStyle(index) {
+      let backgroundColor = "transparent";
       if (this.links[index].backgroundColor) {
-        backgroundColor = this.links[index].backgroundColor
+        backgroundColor = this.links[index].backgroundColor;
       }
-      this.$refs.link[index].style.backgroundColor = backgroundColor
-    }
-  }
-}
+      this.$refs.link[index].style.backgroundColor = backgroundColor;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 #vue-about-me {
   text-align: center;
   padding: 10px;
+
+  a {
+    text-decoration: none;
+  }
+
   .copyright {
     font-size: 1em;
     padding-bottom: 5px;
@@ -133,7 +165,7 @@ export default {
     background-color: transparent;
     border: 1px solid #000;
     border-radius: 2em;
-    transition: .3s;
+    transition: 0.3s;
     align-content: center;
     line-height: 2em;
     margin: 5px;
@@ -146,8 +178,9 @@ export default {
       text-shadow: 0px 0px 1px #000;
     }
     .icon {
-      width: 1em; height: 1em;
-      vertical-align: -0.15em;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.14em;
       fill: currentColor;
       overflow: hidden;
     }
@@ -245,7 +278,7 @@ $tooltip-margin: 10px;
       color: black;
       padding: 24px;
       border-radius: 5px;
-      box-shadow: 0 5px 30px rgba(black, .1);
+      box-shadow: 0 5px 30px rgba(black, 0.1);
     }
 
     .popover-arrow {
@@ -253,16 +286,16 @@ $tooltip-margin: 10px;
     }
   }
 
-  &[aria-hidden='true'] {
+  &[aria-hidden="true"] {
     visibility: hidden;
     opacity: 0;
-    transition: opacity .15s, visibility .15s;
+    transition: opacity 0.15s, visibility 0.15s;
   }
 
-  &[aria-hidden='false'] {
+  &[aria-hidden="false"] {
     visibility: visible;
     opacity: 1;
-    transition: opacity .15s;
+    transition: opacity 0.15s;
   }
 }
 </style>
