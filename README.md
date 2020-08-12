@@ -5,6 +5,8 @@
 ![npm](https://img.shields.io/npm/l/vue-about-me.svg?style=for-the-badge)
 ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-about-me.svg?style=for-the-badge)
 
+[![Demo](https://github.com/YunYouJun/vue-about-me/workflows/Demo/badge.svg)](https://yunyoujun.github.io/vue-about-me/)
+
 Display copyright and some links about me.
 
 - [Demo](https://yunyoujun.github.io/vue-about-me/)
