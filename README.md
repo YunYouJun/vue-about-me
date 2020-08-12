@@ -73,7 +73,7 @@ Symbol link is recommend.
 ```js
 copyright: {
   name: 'Vue About Me',
-  repoName: 'Vue-About-Me',
+  repo: 'Vue-About-Me',
   author: 'YunYouJun',
   logo: '#icon-cloud',
   // or
@@ -110,7 +110,7 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 | Attribute | Description  | Type   | Options      | Default                           |
 | --------- | ------------ | ------ | ------------ | --------------------------------- |
 | name      | 名称         | string | Vue About Me |
-| repoName  | 项目仓库名称 | string | ——           | Vue-About-Me                      |
+| repo      | 项目仓库名称 | string | ——           | Vue-About-Me                      |
 | author    | 作者         | string | ——           | YunYouJun                         |
 | logo      | 图标(class)  | string | ——           | #icon-cloud(img url is supported) |
 | link      | 图标链接     | string | ——           | #                                 |
@@ -136,4 +136,4 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 
 #### GitHub Item
 
-Default: `https://github.com/author/repoName`
+Default: `https://github.com/author/repo`

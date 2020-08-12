@@ -6,7 +6,7 @@
           :href="`https://github.com/${copyright.author}/${copyright.repo}`"
           target="_blank"
         >
-          {{ copyright.name ? copyright.name : copyright.repoName }}
+          {{ copyright.name ? copyright.name : copyright.repo }}
         </a>
       </template>
       <a :href="copyright.link" :style="{ color: copyright.color }">
