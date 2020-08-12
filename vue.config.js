@@ -6,9 +6,6 @@ module.exports = {
     output: {
       libraryExport: "default",
     },
-    externals: {
-      VTooltip: "v-tooltip",
-    },
   },
   pages: {
     index: {

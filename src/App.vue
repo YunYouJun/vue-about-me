@@ -24,9 +24,8 @@
     <div class="link">
       <a
         ref="link"
-        class="link-item"
+        class="link-item tooltip"
         v-for="(link, index) in links"
-        v-tooltip.top-center="link.label"
         trigger="hover"
         :key="index"
         :style="{
@@ -39,6 +38,7 @@
         @mouseover="hoverStyle(index, link.color)"
         @mouseout="resetStyle(index)"
       >
+        <span class="tooltip-text">{{ link.label }}</span>
         <svg class="icon" aria-hidden="true">
           <use :xlink:href="link.icon"></use>
         </svg>
@@ -79,7 +79,7 @@ export default {
             name: "telegram",
             color: "#1da1f2",
             icon: "#icon-telegram-line",
-            label: "Telegram Channel: El Psy Congroo",
+            label: "Telegram Channel",
             href: "https://t.me/elpsycn",
           },
           {
@@ -185,117 +185,47 @@ export default {
       overflow: hidden;
     }
   }
-}
 
-// v-tooltip
-$tooltip-margin: 10px;
-.tooltip {
-  display: block !important;
-  z-index: 10000;
+  // tooltip
+  .tooltip {
+    position: relative;
+    display: inline-block;
 
-  .tooltip-inner {
-    background: black;
-    color: white;
-    border-radius: 16px;
-    padding: 5px 10px 4px;
-  }
-
-  .tooltip-arrow {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    position: absolute;
-    margin: 5px;
-    border-color: black;
-    z-index: 1;
-  }
-
-  &[x-placement^="top"] {
-    margin-bottom: $tooltip-margin;
-
-    .tooltip-arrow {
-      border-width: 5px 5px 0 5px;
-      border-left-color: transparent !important;
-      border-right-color: transparent !important;
-      border-bottom-color: transparent !important;
-      bottom: -5px;
-      left: calc(50% - 5px);
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  &[x-placement^="bottom"] {
-    margin-top: 5px;
-
-    .tooltip-arrow {
-      border-width: 0 5px 5px 5px;
-      border-left-color: transparent !important;
-      border-right-color: transparent !important;
-      border-top-color: transparent !important;
-      top: -5px;
-      left: calc(50% - 5px);
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  &[x-placement^="right"] {
-    margin-left: 5px;
-
-    .tooltip-arrow {
-      border-width: 5px 5px 5px 0;
-      border-left-color: transparent !important;
-      border-top-color: transparent !important;
-      border-bottom-color: transparent !important;
-      left: -5px;
-      top: calc(50% - 5px);
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  &[x-placement^="left"] {
-    margin-right: 5px;
-
-    .tooltip-arrow {
-      border-width: 5px 0 5px 5px;
-      border-top-color: transparent !important;
-      border-right-color: transparent !important;
-      border-bottom-color: transparent !important;
-      right: -5px;
-      top: calc(50% - 5px);
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  &.popover {
-    $color: #f9f9f9;
-
-    .popover-inner {
-      background: $color;
-      color: black;
-      padding: 24px;
+    .tooltip-text {
+      visibility: hidden;
+      font-size: 12px;
+      width: 120px;
+      background-color: rgba(55, 55, 55, 0.9);
+      color: #fff;
+      text-align: center;
       border-radius: 5px;
-      box-shadow: 0 5px 30px rgba(black, 0.1);
+      padding: 0 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -65px;
+      opacity: 0;
+      transition: opacity 0.2s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
     }
 
-    .popover-arrow {
-      border-color: $color;
+    &:hover {
+      .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
     }
-  }
-
-  &[aria-hidden="true"] {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.15s, visibility 0.15s;
-  }
-
-  &[aria-hidden="false"] {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.15s;
   }
 }
 </style>

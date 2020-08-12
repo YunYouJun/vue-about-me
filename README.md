@@ -7,16 +7,13 @@
 
 Display copyright and some links about me.
 
-- [Online Demo](https://yunyoujun.github.io/vue-about-me/)
-- [unpkg](https://unpkg.com/vue-about-me)
+- [Demo](https://yunyoujun.github.io/vue-about-me/)
+- [vue-about-me | unpkg](https://unpkg.com/vue-about-me)
+- [vue-about-me | jsdelivr](https://cdn.jsdelivr.net/npm/vue-about-me)
 
 ## Base
 
 - [vue](https://cn.vuejs.org/)
-- [v-tooltip](https://github.com/Akryum/v-tooltip)
-
-Use [v-tooltip](https://github.com/Akryum/v-tooltip),
-You can override the style of tooltip by reference to [v-tooltip](https://github.com/Akryum/v-tooltip#style-examples).
 
 ## How To Use
 
@@ -31,8 +28,6 @@ Example
 import Vue from 'vue'
 import App from './App.vue'
 ...
-import VTooltip from 'v-tooltip'
-Vue.use(VTooltip)
 ```
 
 ```html

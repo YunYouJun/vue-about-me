@@ -3,7 +3,8 @@
     <div class="header">Header</div>
     <div class="main">Main</div>
     <div class="footer">
-      <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
+      <vue-about-me :copyright="copyright"></vue-about-me>
+      <!-- <vue-about-me :copyright="copyright" :links="links"></vue-about-me> -->
     </div>
   </div>
 </template>
@@ -25,6 +26,7 @@ export default {
         link: "https://yunyoujun.github.io/vue-about-me/",
         color: "#0078E7",
       },
+      // links: []
     };
   },
   components: {
