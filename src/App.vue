@@ -30,7 +30,6 @@
         :key="index"
         :style="{
           color: link.color,
-          borderColor: link.color,
           backgroundColor: link.backgroundColor,
         }"
         :href="link.href"
@@ -140,15 +139,15 @@ export default {
 
   .copyright {
     font-size: 1em;
-    padding-bottom: 5px;
+    padding: 5px;
     .logo {
       width: 1.5em;
       height: 1.5em;
       vertical-align: -0.3em;
       fill: currentColor;
       overflow: hidden;
+      padding: 0 5px;
 
-      padding: 0px 5px;
       transition: 0.5s;
       &:hover {
         transform: scale(1.2);
@@ -163,8 +162,7 @@ export default {
     cursor: pointer;
     user-select: none;
     background-color: transparent;
-    border: 1px solid #000;
-    border-radius: 2em;
+    border-radius: 50%;
     transition: 0.3s;
     align-content: center;
     line-height: 2em;
@@ -178,9 +176,9 @@ export default {
       text-shadow: 0px 0px 1px #000;
     }
     .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.14em;
+      width: 1.2em;
+      height: 1.2em;
+      vertical-align: -0.25em;
       fill: currentColor;
       overflow: hidden;
     }

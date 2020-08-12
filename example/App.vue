@@ -57,6 +57,6 @@ body {
   background-color: #e9eef3;
   color: #333;
   text-align: center;
-  line-height: 444px;
+  line-height: 600px;
 }
 </style>
