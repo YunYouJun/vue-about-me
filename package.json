@@ -13,7 +13,7 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name VueAboutMe && yarn build:example",
+    "build": "vue-cli-service build --target lib --name VueAboutMe",
     "build:example": "vue-cli-service build --dest example/dist example/index.js",
     "deploy": "gh-pages -d example/dist",
     "example": "yarn serve",
