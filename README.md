@@ -75,7 +75,7 @@ copyright: {
   name: 'Vue About Me',
   repo: 'Vue-About-Me',
   author: 'YunYouJun',
-  logo: '#icon-cloud',
+  logo: '#icon-cloud-line',
   // or
   // logo: 'https://cn.vuejs.org/images/logo.png',
   link: 'https://yunyoujun.github.io/vue-about-me/',
@@ -84,7 +84,7 @@ copyright: {
 links: [
   {
     // ...
-    icon: '#icon-cloud'
+    icon: '#icon-cloud-line'
     // ...
   }
 ]
