@@ -21,7 +21,7 @@ export default defineComponent({
         name: "Vue About Me",
         repo: "Vue-About-Me",
         author: "YunYouJun",
-        logo: "#icon-cloud-line",
+        logo: "ri:cloud-line",
         // logo: 'https://cn.vuejs.org/images/logo.png',
         link: "https://yunyoujun.github.io/vue-about-me/",
         color: "#0078E7",
@@ -42,7 +42,6 @@ body {
 }
 
 .footer {
-  text-align: center;
   background-color: rgb(209, 232, 255);
 }
 

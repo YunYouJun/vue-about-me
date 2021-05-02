@@ -1,20 +1,31 @@
 {
   "name": "vue-about-me",
-  "version": "1.0.0-alpha.1",
-  "description": "Use Vue Element Display About Me Info",
-  "main": "dist/vue-about-me.umd.min.js",
+  "version": "1.0.0-alpha.2",
+  "description": "A Vue component for displaying About Me Info.",
+  "main": "./dist/vue-about-me.umd.min.js",
   "module": "./dist/vue-about-me.es.js",
   "exports": {
     ".": {
       "import": "./dist/vue-about-me.es.js",
       "require": "./dist/vue-about-me.umd.js"
+    },
+    "./style": {
+      "import": "./dist/style.css"
     }
   },
+  "browser": {
+    "./sfc": "./src/VueAboutMe.vue"
+  },
+  "style": "./dist/style.css",
   "files": [
     "dist"
   ],
   "repository": "https://github.com/YunYouJun/vue-about-me.git",
-  "author": "YunYouJun <me@yunyoujun.cn>",
+  "author": {
+    "email": "me@yunyoujun.cn",
+    "name": "YunYouJun",
+    "url": "https://www.yunyoujun.cn"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "vite",

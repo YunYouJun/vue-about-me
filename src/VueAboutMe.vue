@@ -13,19 +13,14 @@
         :href="copyright.link"
         :style="{ color: copyright.color }"
         target="_blank"
+        class="logo"
       >
-        <template v-if="copyright.logo.indexOf('#icon-') !== -1">
-          <svg class="logo animate-logo" aria-hidden="true">
-            <use :xlink:href="copyright.logo"></use>
-          </svg>
-        </template>
-        <template v-else>
-          <img class="logo" :alt="copyright.logo" :src="copyright.logo" />
-        </template>
+        <span class="iconify animate-logo" :data-icon="copyright.logo"></span>
+        <!-- <img :alt="copyright.logo" :src="copyright.logo" /> -->
       </a>
       <span>{{ copyright.author }}</span>
     </div>
-    <div class="link">
+    <div class="links">
       <a
         ref="link"
         class="link-item tooltip"
@@ -37,9 +32,7 @@
         target="_blank"
       >
         <span class="tooltip-text">{{ link.label }}</span>
-        <svg class="icon" aria-hidden="true">
-          <use :xlink:href="link.icon"></use>
-        </svg>
+        <span class="iconify" :data-icon="link.icon"></span>
       </a>
     </div>
   </div>
@@ -48,7 +41,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "@vue/runtime-core";
 
-interface AboutLink {
+export interface AboutLink {
   /**
    * 名称
    */
@@ -85,7 +78,7 @@ export default defineComponent({
           name: "Vue About Me",
           repo: "Vue-About-Me",
           author: "YunYouJun",
-          logo: "#icon-cloud-line",
+          logo: "ri:cloud-line",
           link: "https://www.yunyoujun.cn",
           color: "#0078e7",
         };
@@ -98,42 +91,35 @@ export default defineComponent({
           {
             name: "github",
             color: "black",
-            icon: "#icon-github-line",
+            icon: "ri:github-line",
             label: `GitHub: YunYouJun`,
             href: `https://github.com/YunYouJun`,
           },
           {
             name: "telegram",
             color: "#1da1f2",
-            icon: "#icon-telegram-line",
+            icon: "ri:telegram-line",
             label: "Telegram Channel",
             href: "https://t.me/elpsycn",
           },
           {
             name: "weibo",
             color: "#DB2828",
-            icon: "#icon-weibo-line",
+            icon: "ri:weibo-line",
             label: "微博：机智的云游君",
             href: "http://weibo.com/jizhideyunyoujun",
           },
           {
             name: "twitter",
             color: "#1da1f2",
-            icon: "#icon-twitter-line",
+            icon: "ri:twitter-line",
             label: "Twitter: YunYouJun",
             href: "https://twitter.com/YunYouJun",
           },
-          // {
-          //   name: "email",
-          //   color: "#409EFF",
-          //   icon: "#icon-mail-line",
-          //   label: "E-mail：me@yunyoujun.cn",
-          //   href: "mailto:me@yunyoujun.cn",
-          // },
           {
             name: "blog",
             color: "#6435C9",
-            icon: "#icon-global-line",
+            icon: "ri:global-line",
             label: "博客：yunyoujun.cn",
             href: "http://www.yunyoujun.cn",
           },
@@ -147,7 +133,7 @@ export default defineComponent({
 <style lang="scss">
 #vue-about-me {
   text-align: center;
-  padding: 10px;
+  padding: 0.8rem;
 
   .animate-logo {
     animation: iconAnimate 1.5s ease-in-out infinite;
@@ -158,14 +144,17 @@ export default defineComponent({
     text-decoration: none;
   }
 
+  .iconify {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
   .copyright {
     font-size: 0.9rem;
     padding: 5px;
 
     .logo {
-      width: 1.2rem;
-      height: 1.2rem;
-      vertical-align: -0.3em;
+      vertical-align: -0.25rem;
       fill: currentColor;
       overflow: hidden;
       padding: 0 0.5rem;
@@ -177,20 +166,31 @@ export default defineComponent({
     }
   }
 
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .link-item {
-    display: inline-block;
-    font-size: 1em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
     color: var(--vam-color, #000);
     cursor: pointer;
     user-select: none;
     background-color: transparent;
     border-radius: 50%;
     transition: 0.3s;
-    align-content: center;
-    line-height: 2em;
-    margin: 5px;
+    margin: 0.4rem;
 
-    width: 2em;
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+      display: inline-flex;
+    }
 
     &:hover {
       background-color: var(--vam-color, "transparent");
@@ -198,20 +198,12 @@ export default defineComponent({
       color: #fff !important;
       text-shadow: 0px 0px 1px #000;
     }
-
-    .icon {
-      width: 1.2em;
-      height: 1.2em;
-      vertical-align: -0.25em;
-      fill: currentColor;
-      overflow: hidden;
-    }
   }
 
   // tooltip
   .tooltip {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
 
     .tooltip-text {
       visibility: hidden;
@@ -221,7 +213,7 @@ export default defineComponent({
       color: #fff;
       text-align: center;
       border-radius: 5px;
-      padding: 0 5px;
+      padding: 5px;
       position: absolute;
       z-index: 1;
       bottom: 125%;

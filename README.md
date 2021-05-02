@@ -56,17 +56,14 @@ export default {
 
 ### Icon
 
-You need have custom icon class name.
-You can use [iconfont](https://iconfont.cn/).
-
-And add link in your `index.html`.
-
-Symbol link is recommend.
+We use [Iconify](https://iconify.design/).
 
 ```html
-<script src="//at.alicdn.com/t/font_699884_hy52mxs5pya.js"></script>
-<!-- you can use it or custom more icon in iconfont and get a new link-->
+<!-- add this in your html -->
+<script src="https://code.iconify.design/2/2.0.0-rc.6/iconify.min.js"></script>
 ```
+
+Then find icon name in <https://icones.js.org>.
 
 #### Example
 
@@ -75,7 +72,7 @@ copyright: {
   name: 'Vue About Me',
   repo: 'Vue-About-Me',
   author: 'YunYouJun',
-  logo: '#icon-cloud-line',
+  logo: 'ri:cloud-line',
   // or
   // logo: 'https://cn.vuejs.org/images/logo.png',
   link: 'https://yunyoujun.github.io/vue-about-me/',
@@ -84,7 +81,7 @@ copyright: {
 links: [
   {
     // ...
-    icon: '#icon-cloud-line'
+    icon: 'ri:cloud-line'
     // ...
   }
 ]
@@ -112,7 +109,7 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 | name      | 名称         | string | Vue About Me |
 | repo      | 项目仓库名称 | string | ——           | Vue-About-Me                      |
 | author    | 作者         | string | ——           | YunYouJun                         |
-| logo      | 图标(class)  | string | ——           | #icon-cloud(img url is supported) |
+| logo      | 图标名称     | string | ——           | ri:cloud-line (ref icones.js.org) |
 | link      | 图标链接     | string | ——           | #                                 |
 | color     | 图标颜色     | string | ——           | #0078E7                           |
 
@@ -130,7 +127,7 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 | name            | 名称        |      | ——      |
 | color           | 颜色        |      | ——      |
 | backgroundColor | 背景颜色    |      | ——      | transparent |
-| icon            | 图标        |      | ——      |
+| icon            | 图标名称    |      | ——      |
 | label           | 标签提示    |      | ——      |
 | href            | 链接        |      | ——      |
 

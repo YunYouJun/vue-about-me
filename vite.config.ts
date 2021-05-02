@@ -16,7 +16,7 @@ export default ({ command, mode }) => {
       build: {
         cssCodeSplit: false,
         lib: {
-          entry: path.resolve(__dirname, "src/VueAboutMe.vue"),
+          entry: path.resolve(__dirname, "src/index.ts"),
           name: "MyLib",
         },
         rollupOptions: {
