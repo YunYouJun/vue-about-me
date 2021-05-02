@@ -1,25 +1,27 @@
 {
   "name": "vue-about-me",
-  "version": "0.3.2",
+  "version": "1.0.0-alpha.1",
   "description": "Use Vue Element Display About Me Info",
-  "main": "dist/VueAboutMe.umd.min.js",
+  "main": "dist/vue-about-me.umd.min.js",
+  "module": "./dist/vue-about-me.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-about-me.es.js",
+      "require": "./dist/vue-about-me.umd.js"
+    }
+  },
   "files": [
-    "dist",
-    "example",
-    "src",
-    "vue.config.js"
+    "dist"
   ],
   "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name VueAboutMe",
-    "build:example": "vue-cli-service build --dest example/dist example/index.js",
-    "deploy": "gh-pages -d example/dist",
-    "example": "yarn serve",
-    "prepublish": "yarn build",
-    "predeploy": "yarn run build:example",
-    "serve": "vue-cli-service serve"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:example": "vue-tsc --noEmit && vite build --mode example",
+    "serve": "vite preview",
+    "prepublishOnly": "yarn build"
   },
   "keywords": [
     "vue",
@@ -29,13 +31,15 @@
     "copyright"
   ],
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.8",
-    "@vue/cli-service": "^4.5.8",
-    "sass-loader": "^10.0.4",
-    "vue-template-compiler": "^2.6.12"
+    "@types/node": "^15.0.1",
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/compiler-sfc": "^3.0.11",
+    "typescript": "^4.2.4",
+    "vite": "^2.2.3",
+    "vue-tsc": "^0.0.25"
   },
   "dependencies": {
     "sass": "^1.27.0",
-    "vue": "^2.6.12"
+    "vue": "^3.0.11"
   }
 }
