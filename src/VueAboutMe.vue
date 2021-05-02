@@ -144,17 +144,26 @@ export default defineComponent({
     text-decoration: none;
   }
 
+  svg {
+    display: inline-block;
+  }
+
   .iconify {
     width: 1.2rem;
     height: 1.2rem;
   }
 
   .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.9rem;
     padding: 5px;
 
     .logo {
-      vertical-align: -0.25rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       fill: currentColor;
       overflow: hidden;
       padding: 0 0.5rem;
@@ -187,10 +196,6 @@ export default defineComponent({
 
     width: 2rem;
     height: 2rem;
-
-    svg {
-      display: inline-flex;
-    }
 
     &:hover {
       background-color: var(--vam-color, "transparent");
