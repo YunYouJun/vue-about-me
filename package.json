@@ -1,8 +1,8 @@
 {
   "name": "vue-about-me",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.5",
   "description": "A Vue component for displaying About Me Info.",
-  "main": "./dist/vue-about-me.umd.min.js",
+  "main": "./dist/vue-about-me.umd.js",
   "module": "./dist/vue-about-me.es.js",
   "exports": {
     ".": {
@@ -11,6 +11,9 @@
     },
     "./style": {
       "import": "./dist/style.css"
+    },
+    "./sfc": {
+      "import": "./src/VueAboutMe.vue"
     }
   },
   "browser": {
