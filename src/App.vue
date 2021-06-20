@@ -9,8 +9,11 @@
 </template>
 
 <script lang="ts" setup>
-import VueAboutMe from "./VueAboutMe.vue";
-// import '../dist/VueAboutMe.umd.js'
+// import VueAboutMe from "./VueAboutMe.vue";
+
+// test real js
+import VueAboutMe from "../dist/vue-about-me.es.js";
+import "../dist/style.css";
 
 const copyright = {
   name: "Vue About Me",

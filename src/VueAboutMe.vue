@@ -27,9 +27,8 @@
     </div>
     <div class="links">
       <a
-        ref="link"
         class="link-item tooltip"
-        v-for="(link, index) in links"
+        v-for="(link, index) in props.links"
         trigger="hover"
         :key="index"
         :style="`--vam-color: ${getLinkInfoByType(link.type).color}`"
@@ -174,7 +173,6 @@ const props = defineProps({
   },
 });
 
-const { links } = toRefs(props);
 const copyright = Object.assign(
   {
     author: "YunYouJun",
