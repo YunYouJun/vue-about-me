@@ -10,12 +10,17 @@
         </a>
       </template>
       <a
-        :href="copyright.link"
+        :href="copyright.link || 'https://sponsors.yunyoujun.cn'"
         :style="{ color: copyright.color }"
         target="_blank"
         class="logo"
       >
-        <span class="iconify animate-logo" :data-icon="copyright.logo"></span>
+        <SocialIcon
+          class="animate-logo"
+          :type="copyright.icon || 'cloud'"
+          :icon="copyright.icon || 'cloud'"
+          :color="copyright.color || '#0078E7'"
+        />
         <!-- <img :alt="copyright.logo" :src="copyright.logo" /> -->
       </a>
       <span>{{ copyright.author }}</span>
@@ -27,37 +32,43 @@
         v-for="(link, index) in links"
         trigger="hover"
         :key="index"
-        :style="`--vam-color: ${link.color}`"
+        :style="`--vam-color: ${getLinkInfoByType(link.type).color}`"
         :href="link.href"
         target="_blank"
       >
         <span class="tooltip-text">{{ link.label }}</span>
-        <span class="iconify" :data-icon="link.icon"></span>
+        <SocialIcon :type="link.type" :icon="link.icon" :color="link.color" />
       </a>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from "@vue/runtime-core";
+<script lang="ts" setup>
+import { defineProps, toRefs } from "vue";
+import type { PropType } from "vue";
+import SocialIcon from "./components/SocialIcon.vue";
 
 export interface AboutLink {
   /**
+   * 类型
+   */
+  type?: string;
+  /**
    * 名称
    */
-  name: string;
+  name?: string;
   /**
    * 颜色
    */
-  color: string;
+  color?: string;
   /**
    * 背景色
    */
-  backgroundColor: string;
+  backgroundColor?: string;
   /**
    * 图标
    */
-  icon: string;
+  icon?: string;
   /**
    * 提示内容
    */
@@ -68,66 +79,111 @@ export interface AboutLink {
   href: string;
 }
 
-export default defineComponent({
-  name: "VueAboutMe",
-  props: {
-    copyright: {
-      type: Object,
-      default() {
-        return {
-          name: "Vue About Me",
-          repo: "Vue-About-Me",
-          author: "YunYouJun",
-          logo: "ri:cloud-line",
-          link: "https://www.yunyoujun.cn",
-          color: "#0078e7",
-        };
-      },
+const socialList = [
+  {
+    type: "github",
+    color: "black",
+  },
+  {
+    type: "telegram",
+    color: "#1da1f2",
+  },
+  {
+    type: "weibo",
+    color: "#DB2828",
+  },
+  {
+    type: "twitter",
+    color: "#1da1f2",
+  },
+  {
+    type: "wechat",
+    color: "#1AAD19",
+  },
+  {
+    type: "blog",
+    color: "#6435C9",
+  },
+  {
+    type: "cloud",
+    color: "#0078e7",
+  },
+];
+
+/**
+ * 根据类型获取对应链接的图标和颜色
+ */
+function getLinkInfoByType(type?: string) {
+  const instance = socialList.find((item) => item.type === type);
+  return {
+    color: instance?.color || "#0078e7",
+    icon: instance?.type || "cloud",
+  };
+}
+
+const props = defineProps({
+  copyright: {
+    type: Object,
+    default() {
+      return {
+        name: "Vue About Me",
+        repo: "Vue-About-Me",
+        author: "YunYouJun",
+        icon: "cloud",
+        link: "https://sponsors.yunyoujun.cn",
+        color: "black",
+      };
     },
-    links: {
-      type: Array as PropType<AboutLink[]>,
-      default() {
-        return [
-          {
-            name: "github",
-            color: "black",
-            icon: "ri:github-line",
-            label: `GitHub: YunYouJun`,
-            href: `https://github.com/YunYouJun`,
-          },
-          {
-            name: "telegram",
-            color: "#1da1f2",
-            icon: "ri:telegram-line",
-            label: "Telegram Channel",
-            href: "https://t.me/elpsycn",
-          },
-          {
-            name: "weibo",
-            color: "#DB2828",
-            icon: "ri:weibo-line",
-            label: "微博：机智的云游君",
-            href: "http://weibo.com/jizhideyunyoujun",
-          },
-          {
-            name: "twitter",
-            color: "#1da1f2",
-            icon: "ri:twitter-line",
-            label: "Twitter: YunYouJun",
-            href: "https://twitter.com/YunYouJun",
-          },
-          {
-            name: "blog",
-            color: "#6435C9",
-            icon: "ri:global-line",
-            label: "博客：yunyoujun.cn",
-            href: "http://www.yunyoujun.cn",
-          },
-        ];
-      },
+  },
+  links: {
+    type: Array as PropType<AboutLink[]>,
+    default() {
+      return [
+        {
+          type: "github",
+          label: `GitHub: YunYouJun`,
+          href: `https://github.com/YunYouJun`,
+        },
+        {
+          type: "telegram",
+          label: "Telegram Channel",
+          href: "https://t.me/elpsycn",
+        },
+        {
+          type: "weibo",
+          label: "微博：机智的云游君",
+          href: "http://weibo.com/jizhideyunyoujun",
+        },
+        {
+          type: "twitter",
+          label: "Twitter: YunYouJun",
+          href: "https://twitter.com/YunYouJun",
+        },
+        {
+          type: "wechat",
+          label: "微信公众号：云游君",
+          href: "https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/about/white-qrcode-and-search.jpg",
+        },
+        {
+          type: "blog",
+          label: "博客：yunyoujun.cn",
+          href: "http://www.yunyoujun.cn",
+        },
+      ];
     },
   },
 });
+
+const { links } = toRefs(props);
+const copyright = Object.assign(
+  {
+    author: "YunYouJun",
+    icon: "cloud",
+    link: "https://sponsors.yunyoujun.cn",
+    color: "#0078e7",
+  },
+  props.copyright
+);
 </script>
 
 <style lang="scss">

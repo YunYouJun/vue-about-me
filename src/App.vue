@@ -4,35 +4,21 @@
     <div class="main">Main</div>
     <div class="footer">
       <vue-about-me :copyright="copyright"></vue-about-me>
-      <!-- <vue-about-me :copyright="copyright" :links="links"></vue-about-me> -->
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@vue/runtime-core";
+<script lang="ts" setup>
 import VueAboutMe from "./VueAboutMe.vue";
 // import '../dist/VueAboutMe.umd.js'
 
-export default defineComponent({
-  data() {
-    return {
-      copyright: {
-        name: "Vue About Me",
-        repo: "Vue-About-Me",
-        author: "YunYouJun",
-        logo: "ri:cloud-line",
-        // logo: 'https://cn.vuejs.org/images/logo.png',
-        link: "https://yunyoujun.github.io/vue-about-me/",
-        color: "#0078E7",
-      },
-      // links: []
-    };
-  },
-  components: {
-    VueAboutMe,
-  },
-});
+const copyright = {
+  name: "Vue About Me",
+  repo: "Vue-About-Me",
+  author: "YunYouJun",
+  // logo: 'https://cn.vuejs.org/images/logo.png',
+  link: "https://sponsors.yunyoujun.cn",
+};
 </script>
 
 <style lang="scss">

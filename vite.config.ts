@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import Vue from "@vitejs/plugin-vue";
+import Icons, { ViteIconsResolver } from 'vite-plugin-icons'
+import Components from 'vite-plugin-components'
 import path from "path";
 import pkg from "./package.json";
 
@@ -8,16 +10,21 @@ export default ({ command, mode }) => {
   if (mode === "example") {
     return defineConfig({
       base: `/${pkg.name}/`,
-      plugins: [vue()],
+      plugins: [Vue()],
     });
   } else {
     return defineConfig({
-      plugins: [vue()],
+      plugins: [
+        Vue(),
+        Icons(),
+        Components({
+        customComponentResolvers: ViteIconsResolver(),
+      })],
       build: {
         cssCodeSplit: false,
         lib: {
           entry: path.resolve(__dirname, "src/index.ts"),
-          name: "MyLib",
+          name: "VueAboutMe",
         },
         rollupOptions: {
           // make sure to externalize deps that shouldn't be bundled
