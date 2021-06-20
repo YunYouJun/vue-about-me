@@ -1,8 +1,14 @@
 {
   "name": "vue-about-me",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A Vue component for displaying About Me Info.",
   "main": "./dist/vue-about-me.umd.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "index.d.ts"
+  ],
   "module": "./dist/vue-about-me.es.js",
   "exports": {
     ".": {
