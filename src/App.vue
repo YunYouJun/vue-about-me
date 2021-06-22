@@ -7,14 +7,15 @@
 </template>
 
 <script lang="ts" setup>
-import VueAboutMe from "vue-about-me";
-import "vue-about-me/style";
+// import VueAboutMe from "vue-about-me";
+// import "vue-about-me/style.css";
 
 // import VueAboutMe from "./VueAboutMe.vue";
 
 // test real js
-// import VueAboutMe from "../dist/vue-about-me.es.js";
-// import "../dist/style.css";
+// @ts-ignore
+import VueAboutMe from "../dist/vue-about-me.es.js";
+import "../dist/style.css";
 
 const copyright = {
   name: "Vue About Me",
