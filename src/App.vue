@@ -1,19 +1,20 @@
 <template>
-  <div id="app">
-    <div class="header">Header</div>
-    <div class="main">Main</div>
-    <div class="footer">
-      <vue-about-me :copyright="copyright"></vue-about-me>
-    </div>
+  <div class="header">Header</div>
+  <div class="main">Main</div>
+  <div class="footer">
+    <vue-about-me :copyright="copyright"></vue-about-me>
   </div>
 </template>
 
 <script lang="ts" setup>
+import VueAboutMe from "vue-about-me";
+import "vue-about-me/style";
+
 // import VueAboutMe from "./VueAboutMe.vue";
 
 // test real js
-import VueAboutMe from "../dist/vue-about-me.es.js";
-import "../dist/style.css";
+// import VueAboutMe from "../dist/vue-about-me.es.js";
+// import "../dist/style.css";
 
 const copyright = {
   name: "Vue About Me",

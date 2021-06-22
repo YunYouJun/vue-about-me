@@ -27,8 +27,9 @@
     </div>
     <div class="links">
       <a
+        :ref="setItemRef"
         class="link-item tooltip"
-        v-for="(link, index) in props.links"
+        v-for="(link, index) in links"
         trigger="hover"
         :key="index"
         :style="`--vam-color: ${getLinkInfoByType(link.type).color}`"
@@ -46,6 +47,13 @@
 import { defineProps, toRefs } from "vue";
 import type { PropType } from "vue";
 import SocialIcon from "./components/SocialIcon.vue";
+
+const linkRefs: any[] = [];
+const setItemRef = (el: any) => {
+  if (el) {
+    linkRefs.push(el);
+  }
+};
 
 export interface AboutLink {
   /**
@@ -172,6 +180,8 @@ const props = defineProps({
     },
   },
 });
+
+const { links } = toRefs(props);
 
 const copyright = Object.assign(
   {
