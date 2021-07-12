@@ -43,8 +43,8 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { defineProps, toRefs } from "vue";
+<script setup lang="ts">
+import { toRefs } from "vue";
 import type { PropType } from "vue";
 import SocialIcon from "./components/SocialIcon.vue";
 
@@ -84,6 +84,10 @@ export interface AboutLink {
    * 链接
    */
   href: string;
+  /**
+   * 是否为暗色
+   */
+  isDark?: boolean;
 }
 
 const socialList = [
@@ -117,18 +121,11 @@ const socialList = [
   },
 ];
 
-/**
- * 根据类型获取对应链接的图标和颜色
- */
-function getLinkInfoByType(type?: string) {
-  const instance = socialList.find((item) => item.type === type);
-  return {
-    color: instance?.color || "#0078e7",
-    icon: instance?.type || "cloud",
-  };
-}
-
 const props = defineProps({
+  isDark: {
+    type: Boolean,
+    default: false,
+  },
   copyright: {
     type: Object,
     default() {
@@ -181,7 +178,26 @@ const props = defineProps({
   },
 });
 
-const { links } = toRefs(props);
+const { links, isDark } = toRefs(props);
+
+/**
+ * 根据类型获取对应链接的图标和颜色
+ */
+function getLinkInfoByType(type?: string) {
+  const instance = socialList.find((item) => item.type === type);
+  let defaultInfo = {
+    color: instance?.color || "#0078e7",
+    icon: instance?.type || "cloud",
+  };
+  if (
+    instance &&
+    ["black", "#000", "#000000", "rgb(0,0,0)"].includes(instance.color) &&
+    isDark.value
+  ) {
+    defaultInfo.color = "white";
+  }
+  return defaultInfo;
+}
 
 const copyright = Object.assign(
   {

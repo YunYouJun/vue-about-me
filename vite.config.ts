@@ -14,6 +14,11 @@ export default ({ command, mode }) => {
     });
   } else {
     return defineConfig({
+      resolve: {
+        alias: {
+          '~/': `${path.resolve(__dirname, 'src')}/`,
+        },
+      },
       plugins: [
         Vue(),
         Icons(),

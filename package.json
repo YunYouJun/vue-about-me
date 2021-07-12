@@ -1,6 +1,6 @@
 {
   "name": "vue-about-me",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A Vue component for displaying About Me Info.",
   "main": "./dist/vue-about-me.umd.js",
   "types": "index.d.ts",
@@ -46,17 +46,18 @@
     "copyright"
   ],
   "devDependencies": {
-    "@iconify/json": "^1.1.358",
-    "@types/node": "^15.12.4",
-    "@vitejs/plugin-vue": "^1.2.3",
-    "@vue/compiler-sfc": "^3.1.1",
-    "typescript": "^4.3.4",
-    "vite": "2.3.7",
-    "vite-plugin-components": "^0.11.2",
-    "vite-plugin-icons": "^0.6.3"
+    "@iconify/json": "^1.1.374",
+    "@types/node": "^16.3.1",
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.1.4",
+    "@vueuse/core": "^5.1.3",
+    "typescript": "^4.3.5",
+    "vite": "2.4.2",
+    "vite-plugin-components": "^0.12.2",
+    "vite-plugin-icons": "^0.6.5"
   },
   "dependencies": {
-    "sass": "^1.35.1",
-    "vue": "^3.1.1"
+    "sass": "^1.35.2",
+    "vue": "^3.1.4"
   }
 }

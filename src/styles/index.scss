@@ -1,0 +1,55 @@
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text-color: black;
+  --icon-color: #2c3e50;
+  --bg-color: #e9eef3;
+
+  --header-bg-color: rgb(209, 232, 255);
+  --footer-bg-color: var(--header-bg-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+  color: #333;
+  text-align: center;
+}
+
+.main {
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--footer-bg-color);
+}
+
+.icon-btn {
+  color: var(--icon-color);
+  cursor: pointer;
+
+  display: flex;
+  height: 3.5rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.dark {
+  --bg-color: #1d212f;
+  --text-color: white;
+  --icon-color: white;
+
+  --header-bg-color: #2c3e50;
+}
