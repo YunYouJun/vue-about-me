@@ -108,10 +108,11 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 
 ## Options
 
-| Attribute | Description | Type          | Options | Default |
-| --------- | ----------- | ------------- | ------- | ------- |
-| copyright | 显示版权    | Object        | ——      |
-| links     | 显示链接    | Array[Object] | ——      |
+| Attribute | Description                                 | Type             | Options | Default |
+| --------- | ------------------------------------------- | ---------------- | ------- | ------- |
+| isDark    | 暗色模式 （黑色图标在暗色模式下会变成白色） | Boolean （可选） | -       | false   |
+| copyright | 显示版权                                    | Object           | ——      |
+| links     | 显示链接                                    | Array[Object]    | ——      |
 
 ### copyright
 

@@ -11,6 +11,13 @@ const commonConfig: UserConfigExport = {
       "~/": `${path.resolve(__dirname, "src")}/`,
     },
   },
+  plugins: [
+    Vue(),
+    Icons(),
+    Components({
+      customComponentResolvers: ViteIconsResolver(),
+    }),
+  ],
 };
 
 // https://vitejs.dev/config/
@@ -19,19 +26,11 @@ export default ({ command, mode }) => {
     return defineConfig(
       Object.assign(commonConfig, {
         base: `/${pkg.name}/`,
-        plugins: [Vue()],
       })
     );
   } else {
     return defineConfig(
       Object.assign(commonConfig, {
-        plugins: [
-          Vue(),
-          Icons(),
-          Components({
-            customComponentResolvers: ViteIconsResolver(),
-          }),
-        ],
         build: {
           cssCodeSplit: false,
           lib: {
