@@ -10,39 +10,27 @@
   </div>
 </template>
 
-<script lang="ts" >
-import { isDark } from '~/logic'
-import BaseHeader from "~/components/BaseHeader.vue"
+<script lang="ts" setup>
+import { isDark } from "~/logic";
+import BaseHeader from "~/components/BaseHeader.vue";
 
+// method example:
 // import VueAboutMe from "vue-about-me";
 // import "vue-about-me/style.css";
 
-// import VueAboutMe from "./VueAboutMe.vue";
+// dev:
+import VueAboutMe from "./VueAboutMe.vue";
 
-// test real js
+// test real js:
 // @ts-ignore
-import VueAboutMe from "../dist/vue-about-me.es.js";
-import "../dist/style.css";
-import { defineComponent } from "vue";
+// import VueAboutMe from "../dist/vue-about-me.es.js";
+// import "../dist/style.css";
 
-export default defineComponent({
-  components: {
-    BaseHeader,
-    VueAboutMe,
-  },  
-  setup() {
-    const copyright = {
-      name: "Vue About Me",
-      repo: "Vue-About-Me",
-      author: "YunYouJun",
-      // logo: 'https://cn.vuejs.org/images/logo.png',
-      link: "https://sponsors.yunyoujun.cn",
-    };
-
-    return {
-      copyright,
-      isDark
-    }
-  }
-})
+const copyright = {
+  name: "Vue About Me",
+  repo: "Vue-About-Me",
+  author: "YunYouJun",
+  // logo: 'https://cn.vuejs.org/images/logo.png',
+  link: "https://sponsors.yunyoujun.cn",
+};
 </script>

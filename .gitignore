@@ -8,3 +8,6 @@ dist
 dist-ssr
 *.local
 *.log
+
+# generate
+components.d.ts

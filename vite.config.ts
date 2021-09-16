@@ -1,7 +1,10 @@
 import { defineConfig, UserConfigExport } from "vite";
 import Vue from "@vitejs/plugin-vue";
-import Icons, { ViteIconsResolver } from "vite-plugin-icons";
-import Components from "vite-plugin-components";
+
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
+import Components from "unplugin-vue-components/vite";
+
 import path from "path";
 import pkg from "./package.json";
 
@@ -15,7 +18,16 @@ const commonConfig: UserConfigExport = {
     Vue(),
     Icons(),
     Components({
-      customComponentResolvers: ViteIconsResolver(),
+      dts: true,
+      // custom resolvers
+      resolvers: [
+        // auto import icons
+        // https://github.com/antfu/unplugin-icons
+        IconsResolver({
+          // componentPrefix: "",
+          // enabledCollections: ['carbon']
+        }),
+      ],
     }),
   ],
 };

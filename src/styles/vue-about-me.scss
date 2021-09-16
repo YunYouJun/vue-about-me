@@ -1,0 +1,140 @@
+#vue-about-me {
+  text-align: center;
+  padding: 0.8rem;
+
+  .animate-logo {
+    animation: iconAnimate 1.5s ease-in-out infinite;
+  }
+
+  a {
+    color: #0078e7;
+    text-decoration: none;
+  }
+
+  svg {
+    display: inline-block;
+  }
+
+  .iconify {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 5px;
+
+    .logo {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      fill: currentColor;
+      overflow: hidden;
+      padding: 0 0.5rem;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link-item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--vam-color, #000);
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--vam-icon-bg-color, transparent);
+    border-radius: 50%;
+    transition: 0.3s;
+    margin: 0.4rem;
+
+    width: 2rem;
+    height: 2rem;
+
+    &:hover {
+      background-color: var(--vam-color, transparent);
+      transform: scale(1.2);
+      color: var(--vam-hover-color, #fff);
+      text-shadow: 0px 0px 1px #000;
+    }
+  }
+
+  // tooltip
+  .tooltip {
+    position: relative;
+    display: inline-flex;
+
+    .tooltip-text {
+      visibility: hidden;
+      font-size: 12px;
+      width: 120px;
+      background-color: rgba(55, 55, 55, 0.9);
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -65px;
+      opacity: 0;
+      transition: opacity 0.2s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+    }
+
+    &:hover {
+      .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
