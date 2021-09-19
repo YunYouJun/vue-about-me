@@ -46,7 +46,7 @@ import App from './App.vue'
 ```js
 // use default name VueAboutMe
 import "vue-about-me";
-import "vue-about-me/style";
+import "vue-about-me/style.css";
 
 export default {
   components: {
