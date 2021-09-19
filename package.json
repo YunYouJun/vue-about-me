@@ -46,18 +46,18 @@
     "copyright"
   ],
   "devDependencies": {
-    "@iconify/json": "^1.1.402",
-    "@types/node": "^16.9.1",
-    "@vitejs/plugin-vue": "^1.6.2",
-    "@vue/compiler-sfc": "^3.2.11",
-    "@vueuse/core": "^6.3.3",
+    "@iconify/json": "^1.1.403",
+    "@types/node": "^16.9.3",
+    "@vitejs/plugin-vue": "^1.8.0",
+    "@vue/compiler-sfc": "^3.2.12",
+    "@vueuse/core": "^6.4.1",
     "typescript": "^4.4.3",
     "unplugin-icons": "^0.11.3",
     "unplugin-vue-components": "^0.15.2",
-    "vite": "2.5.7"
+    "vite": "2.5.10"
   },
   "dependencies": {
-    "sass": "^1.41.0",
+    "sass": "^1.41.1",
     "vue": "^3.2.11"
   }
 }
