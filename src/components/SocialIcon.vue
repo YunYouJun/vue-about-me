@@ -6,6 +6,7 @@
   <i-ri-twitter-line v-else-if="props.type === 'twitter'" :style="styles" />
   <i-ri-global-line v-else-if="props.type === 'blog'" :style="styles" />
   <i-ri-cloud-line v-else-if="props.type === 'cloud'" :style="styles" />
+  <i-ri-bilibili-line v-else-if="props.type === 'bilibili'" :style="styles" />
   <span v-else class="iconify" :data-icon="props.icon"></span>
 </template>
 

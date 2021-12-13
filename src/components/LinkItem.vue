@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { toRefs, computed } from "vue";
+import { toRefs, computed, CSSProperties } from "vue";
 import type { AboutLink } from "../VueAboutMe.vue";
 import SocialIcon from "./SocialIcon.vue";
 
@@ -52,13 +52,27 @@ const socialList = [
     type: "cloud",
     color: "#0078e7",
   },
+  {
+    type: "bilibili",
+    color: "#fb7299",
+  },
 ];
+
+interface IconStyle {
+  "--vam-color": string;
+  "--vam-hover-color"?: string;
+}
 
 const styles = computed(() => {
   const instance = socialList.find((item) => item.type === link.value.type);
-  const defaultStyle = {
+
+  const defaultStyle: IconStyle = {
     "--vam-color": instance?.color || "#0078e7",
   };
+
+  if (socialList.length > 6) {
+    defaultStyle["--vam-icon-size"] = "1.5rem";
+  }
 
   if (
     instance &&
@@ -68,6 +82,6 @@ const styles = computed(() => {
     defaultStyle["--vam-color"] = "white";
     defaultStyle["--vam-hover-color"] = "black";
   }
-  return defaultStyle;
+  return defaultStyle as CSSProperties;
 });
 </script>

@@ -128,6 +128,11 @@ const props = withDefaults(defineProps<VamProps>(), {
       href: "https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/about/white-qrcode-and-search.jpg",
     },
     {
+      type: "bilibili",
+      label: "云游君Official",
+      href: "https://space.bilibili.com/1579790",
+    },
+    {
       type: "blog",
       label: "博客：yunyoujun.cn",
       href: "http://www.yunyoujun.cn",
