@@ -45,14 +45,8 @@ import App from './App.vue'
 
 ```js
 // use default name VueAboutMe
-import "vue-about-me";
+import VueAboutMe from "vue-about-me";
 import "vue-about-me/style.css";
-
-export default {
-  components: {
-    VueAboutMe,
-  },
-};
 ```
 
 ### Icon
@@ -67,6 +61,7 @@ We use [Iconify](https://iconify.design/).
 - twitter
 - wechat
 - blog
+- bilibili
 
 ```html
 <!-- 仅当你需要额外图标时，添加它 -->

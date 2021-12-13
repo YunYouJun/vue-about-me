@@ -17,7 +17,7 @@ const commonConfig: UserConfigExport = {
   plugins: [
     Vue(),
     Icons({
-      scale: 1,
+      scale: 1.1,
     }),
     Components({
       dts: true,

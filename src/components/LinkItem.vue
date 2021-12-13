@@ -71,7 +71,7 @@ const styles = computed(() => {
   };
 
   if (socialList.length > 6) {
-    defaultStyle["--vam-icon-size"] = "1.5rem";
+    defaultStyle["--vam-icon-size"] = "1.6rem";
   }
 
   if (
