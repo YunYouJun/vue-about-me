@@ -1,6 +1,6 @@
 # vue-about-me
 
-![npm](https://img.shields.io/npm/v/vue-about-me.svg?style=for-the-badge)
+[![npm](https://img.shields.io/npm/v/vue-about-me.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-about-me)
 ![npm](https://img.shields.io/npm/dt/vue-about-me.svg?style=for-the-badge)
 ![npm](https://img.shields.io/npm/l/vue-about-me.svg?style=for-the-badge)
 ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-about-me.svg?style=for-the-badge)

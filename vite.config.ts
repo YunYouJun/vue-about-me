@@ -50,6 +50,17 @@ export default ({ command, mode }) => {
           lib: {
             entry: path.resolve(__dirname, "src/index.ts"),
             name: "VueAboutMe",
+            formats: ['es', 'cjs'],
+            fileName: (format) => {
+              const name = 'vue-about-me'
+              if (format === 'es') {
+                return `${name}.mjs`
+              }
+              if (format === 'cjs') {
+                return `${name}.cjs`
+              }
+              return `${name}.js`
+            } 
           },
           rollupOptions: {
             // make sure to externalize deps that shouldn't be bundled
@@ -64,7 +75,7 @@ export default ({ command, mode }) => {
             },
           },
         },
-      })
+      } as UserConfigExport)
     );
   }
 };

@@ -23,7 +23,7 @@ import VueAboutMe from "./VueAboutMe.vue";
 
 // test real js:
 // @ts-ignore
-// import VueAboutMe from "../dist/vue-about-me.es.js";
+// import VueAboutMe from "../dist/vue-about-me.mjs";
 // import "../dist/style.css";
 
 const copyright = {
