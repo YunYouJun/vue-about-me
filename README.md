@@ -13,10 +13,6 @@ Display copyright and some links about me.
 - [vue-about-me | unpkg](https://unpkg.com/vue-about-me)
 - [vue-about-me | jsdelivr](https://cdn.jsdelivr.net/npm/vue-about-me)
 
-## Base
-
-- [vue](https://cn.vuejs.org/)
-
 ## How To Use
 
 ### Import
@@ -111,14 +107,14 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 
 ### copyright
 
-| Attribute | Description  | Type   | Options      | Default                                        |
-| --------- | ------------ | ------ | ------------ | ---------------------------------------------- |
-| name      | 名称         | string | Vue About Me |
-| repo      | 项目仓库名称 | string | ——           | Vue-About-Me                                   |
-| author    | 作者         | string | ——           | YunYouJun                                      |
-| icon      | 图标名称     | string | ——           | `cloud` 或 `ri:cloud-line` (ref icones.js.org) |
-| link      | 图标链接     | string | ——           | #                                              |
-| color     | 图标颜色     | string | ——           | #0078E7                                        |
+| Attribute | Description            | Type   | Options      | Default                                        |
+| --------- | ---------------------- | ------ | ------------ | ---------------------------------------------- |
+| name      | 名称                   | string | Vue About Me |
+| repo      | 项目仓库名称（GitHub） | string | ——           | Vue-About-Me                                   |
+| author    | 作者                   | string | ——           | YunYouJun                                      |
+| icon      | 图标名称               | string | ——           | `cloud` 或 `ri:cloud-line` (ref icones.js.org) |
+| link      | 图标链接               | string | ——           | #                                              |
+| color     | 图标颜色               | string | ——           | #0078E7                                        |
 
 ### links
 
@@ -132,21 +128,17 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 | Attribute       | Description              | Type   | Options       | Default     |
 | --------------- | ------------------------ | ------ | ------------- | ----------- |
 | type            | 类型（自动生成对应图标） | string | [Icon](#Icon) | ---         |
-| name            | 名称                     |        | ——            |
-| color           | 颜色                     |        | ——            |
+| name            | 名称                     |        | ——            |             |
+| color           | 颜色                     |        | ——            |             |
 | backgroundColor | 背景颜色                 |        | ——            | transparent |
-| icon            | 图标名称                 |        | ——            |
-| label           | 标签提示                 |        | ——            |
-| href            | 链接                     |        | ——            |
+| icon            | 图标名称                 |        | ——            |             |
+| label           | 标签提示                 |        | ——            |             |
+| href            | 链接                     |        | ——            |             |
 
-#### GitHub Item
-
-Default: `https://github.com/author/repo`
-
-## Sponsors
+## [Sponsors](https://sponsors.yunyoujun.cn)
 
 <p align="center">
-  <a href="https://sponsors.yunyoujun.cn">
+  <a href="https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg" target="_blank">
     <img src='https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg'/>
   </a>
 </p>
