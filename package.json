@@ -36,7 +36,7 @@
     "build": "vite build",
     "build:example": "vite build --mode example",
     "serve": "vite preview",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "vue",

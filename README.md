@@ -142,3 +142,11 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 #### GitHub Item
 
 Default: `https://github.com/author/repo`
+
+## Sponsors
+
+<p align="center">
+  <a href="https://sponsors.yunyoujun.cn">
+    <img src='https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg'/>
+  </a>
+</p>
