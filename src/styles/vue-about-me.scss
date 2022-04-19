@@ -1,6 +1,8 @@
-#vue-about-me {
+:root {
   --vam-icon-size: 2rem;
+}
 
+#vue-about-me {
   text-align: center;
   padding: 0.8rem;
 
@@ -15,7 +17,7 @@
 
   .repo-link,
   .author-link {
-    color: inherit;
+    color: var(--vam-link-color, inherit);
   }
 
   svg {

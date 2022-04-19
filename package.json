@@ -1,6 +1,6 @@
 {
   "name": "vue-about-me",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A Vue component for displaying About Me Info.",
   "main": "./dist/vue-about-me.cjs",
   "module": "./dist/vue-about-me.mjs",
