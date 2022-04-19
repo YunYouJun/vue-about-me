@@ -138,7 +138,7 @@ You can see [`example`](https://github.com/YunYouJun/vue-about-me/tree/master/ex
 ## [Sponsors](https://sponsors.yunyoujun.cn)
 
 <p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg" target="_blank">
+  <a href="https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg">
     <img src='https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg'/>
   </a>
 </p>

@@ -31,6 +31,7 @@ const copyright = {
   repo: "Vue-About-Me",
   author: "YunYouJun",
   // logo: 'https://cn.vuejs.org/images/logo.png',
-  link: "https://sponsors.yunyoujun.cn",
+  iconUrl: "https://sponsors.yunyoujun.cn",
+  authorUrl: 'https://www.yunyoujun.cn',
 };
 </script>

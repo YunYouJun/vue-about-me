@@ -13,6 +13,11 @@
     text-decoration: none;
   }
 
+  .repo-link,
+  .author-link {
+    color: inherit;
+  }
+
   svg {
     display: inline-block;
   }

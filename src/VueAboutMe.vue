@@ -1,16 +1,17 @@
 <template>
   <div id="vue-about-me">
     <div class="copyright">
-      <template v-if="copyright.author && copyright.repo">
+      <template v-if="copyright.repo">
         <a
-          :href="`https://github.com/${copyright.author}/${copyright.repo}`"
+          :href="`https://github.com/${copyright.repo}`"
           target="_blank"
+          class="repo-link"
         >
           {{ copyright.name ? copyright.name : copyright.repo }}
         </a>
       </template>
       <a
-        :href="copyright.link || 'https://sponsors.yunyoujun.cn'"
+        :href="copyright.iconUrl || 'https://sponsors.yunyoujun.cn'"
         :style="{ color: copyright.color }"
         target="_blank"
         class="logo"
@@ -23,7 +24,10 @@
         />
         <!-- <img :alt="copyright.logo" :src="copyright.logo" /> -->
       </a>
-      <span>{{ copyright.author }}</span>
+      <a class="author-link" v-if="copyright.authorUrl" :href="copyright.authorUrl" target="_blank">
+        {{ copyright.author }}
+      </a>
+      <span v-else>{{ copyright.author }}</span>
     </div>
     <div class="links">
       <LinkItem
@@ -75,7 +79,9 @@ export interface AboutLink {
   isDark?: boolean;
 }
 
-interface VamProps {
+// interface VamProps 
+
+const props = withDefaults(defineProps<{
   /**
    * 是否为暗色模式
    */
@@ -84,20 +90,22 @@ interface VamProps {
     name: string;
     repo: string;
     author: string;
+    authorUrl: string;
     icon: string;
+    iconUrl: string;
     link: string;
     color: string;
   }>;
-  links?: AboutLink[];
-}
-
-const props = withDefaults(defineProps<VamProps>(), {
+  links?: Partial<AboutLink>[];
+}>(), {
   isDark: false,
   copyright: {
     name: "Vue About Me",
-    repo: "Vue-About-Me",
+    repo: "YunYouJun/vue-about-me",
     author: "YunYouJun",
+    authorUrl: "https://www.yunyoujun.cn",
     icon: "cloud",
+    iconUrl: 'https://sponsors.yunyoujun.cn',
     link: "https://sponsors.yunyoujun.cn",
     color: "black",
   },
@@ -140,13 +148,15 @@ const props = withDefaults(defineProps<VamProps>(), {
   ],
 });
 
+console.log(props.copyright)
+
 const { links, isDark } = toRefs(props);
 
 const copyright = Object.assign(
   {
     author: "YunYouJun",
     icon: "cloud",
-    link: "https://sponsors.yunyoujun.cn",
+    iconUrl: "https://sponsors.yunyoujun.cn",
     color: "#0078e7",
   },
   props.copyright

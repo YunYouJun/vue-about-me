@@ -17,7 +17,7 @@ import type { AboutLink } from "../VueAboutMe.vue";
 import SocialIcon from "./SocialIcon.vue";
 
 const props = defineProps<{
-  link: AboutLink;
+  link: Partial<AboutLink>;
   isDark: boolean;
 }>();
 
