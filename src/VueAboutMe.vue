@@ -68,15 +68,19 @@ export interface AboutLink {
   /**
    * 提示内容
    */
-  label: string;
+  label?: string;
   /**
    * 链接
    */
-  href: string;
+  href?: string;
   /**
    * 是否为暗色
    */
   isDark?: boolean;
+  /**
+   * @default '_blank'
+   */
+  target?: string
 }
 
 // interface VamProps 
@@ -99,7 +103,7 @@ const props = withDefaults(defineProps<{
   links?: Partial<AboutLink>[];
 }>(), {
   isDark: false,
-  copyright: {
+  copyright: () => ({
     name: "Vue About Me",
     repo: "YunYouJun/vue-about-me",
     author: "YunYouJun",
@@ -108,8 +112,8 @@ const props = withDefaults(defineProps<{
     iconUrl: 'https://sponsors.yunyoujun.cn',
     link: "https://sponsors.yunyoujun.cn",
     color: "black",
-  },
-  links: [
+  }),
+  links: () => [
     {
       type: "github",
       label: `GitHub: YunYouJun`,
@@ -147,8 +151,6 @@ const props = withDefaults(defineProps<{
     },
   ],
 });
-
-console.log(props.copyright)
 
 const { links, isDark } = toRefs(props);
 

@@ -4,7 +4,7 @@
     trigger="hover"
     :style="styles"
     :href="link.href"
-    target="_blank"
+    :target="link.target || '_blank'"
   >
     <span class="tooltip-text">{{ link.label }}</span>
     <SocialIcon :type="link.type" :icon="link.icon" :color="link.color" />
@@ -61,6 +61,7 @@ const socialList = [
 interface IconStyle {
   "--vam-color": string;
   "--vam-hover-color"?: string;
+  "--vam-icon-size"?: string
 }
 
 const styles = computed(() => {
