@@ -1,5 +1,6 @@
 {
   "name": "vue-about-me",
+  "type": "module",
   "version": "1.3.0",
   "description": "A Vue component for displaying About Me Info.",
   "author": {
@@ -41,7 +42,7 @@
     "build": "vite build",
     "build:example": "vite build --mode example",
     "lint": "eslint .",
-    "release": "bumpp && npm publish",
+    "release": "bumpp",
     "serve": "vite preview",
     "typecheck": "vue-tsc --noEmit",
     "prepublishOnly": "npm run build"
