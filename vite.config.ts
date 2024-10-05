@@ -1,20 +1,27 @@
-import { defineConfig, UserConfigExport } from "vite";
-import Vue from "@vitejs/plugin-vue";
+import type { UserConfigExport } from 'vite'
+import path from 'node:path'
+import Vue from '@vitejs/plugin-vue'
 
-import Icons from "unplugin-icons/vite";
-import IconsResolver from "unplugin-icons/resolver";
-import Components from "unplugin-vue-components/vite";
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
 
-import path from "path";
-import pkg from "./package.json";
+import DTS from 'vite-plugin-dts'
+import pkg from './package.json'
 
 const commonConfig: UserConfigExport = {
   resolve: {
     alias: {
-      "~/": `${path.resolve(__dirname, "src")}/`,
+      '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
+    DTS({
+      include: [
+        './src/VueAboutMe.vue',
+      ],
+    }),
     Vue(),
     Icons({
       scale: 1.1,
@@ -32,24 +39,25 @@ const commonConfig: UserConfigExport = {
       ],
     }),
   ],
-};
+}
 
 // https://vitejs.dev/config/
-export default ({ command, mode }) => {
-  if (mode === "example") {
+export default ({ command: _command, mode }) => {
+  if (mode === 'example') {
     return defineConfig(
       Object.assign(commonConfig, {
         base: `/${pkg.name}/`,
-      })
-    );
-  } else {
+      }),
+    )
+  }
+  else {
     return defineConfig(
       Object.assign(commonConfig, {
         build: {
           cssCodeSplit: false,
           lib: {
-            entry: path.resolve(__dirname, "src/index.ts"),
-            name: "VueAboutMe",
+            entry: path.resolve(__dirname, 'src/index.ts'),
+            name: 'VueAboutMe',
             formats: ['es', 'cjs'],
             fileName: (format) => {
               const name = 'vue-about-me'
@@ -60,22 +68,22 @@ export default ({ command, mode }) => {
                 return `${name}.cjs`
               }
               return `${name}.js`
-            } 
+            },
           },
           rollupOptions: {
             // make sure to externalize deps that shouldn't be bundled
             // into your library
-            external: ["vue"],
+            external: ['vue'],
             output: {
               // Provide global variables to use in the UMD build
               // for externalized deps
               globals: {
-                vue: "Vue",
+                vue: 'Vue',
               },
             },
           },
         },
-      } as UserConfigExport)
-    );
+      } as UserConfigExport),
+    )
   }
-};
+}

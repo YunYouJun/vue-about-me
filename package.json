@@ -2,42 +2,13 @@
   "name": "vue-about-me",
   "version": "1.2.7",
   "description": "A Vue component for displaying About Me Info.",
-  "main": "./dist/vue-about-me.cjs",
-  "module": "./dist/vue-about-me.mjs",
-  "types": "index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "index.d.ts"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/vue-about-me.mjs",
-      "require": "./dist/vue-about-me.cjs"
-    },
-    "./style.css": "./dist/style.css",
-    "./sfc": {
-      "import": "./src/VueAboutMe.vue"
-    }
-  },
-  "browser": {
-    "./sfc": "./src/VueAboutMe.vue"
-  },
-  "style": "./dist/style.css",
-  "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "author": {
     "email": "me@yunyoujun.cn",
     "name": "YunYouJun",
     "url": "https://www.yunyoujun.cn"
   },
   "license": "MIT",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "build:example": "vite build --mode example",
-    "serve": "vite preview",
-    "prepublishOnly": "npm run build"
-  },
+  "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "keywords": [
     "vue",
     "about",
@@ -45,19 +16,54 @@
     "link",
     "copyright"
   ],
-  "devDependencies": {
-    "@iconify-json/ri": "^1.1.1",
-    "@types/node": "^17.0.27",
-    "@vitejs/plugin-vue": "^2.3.1",
-    "@vue/compiler-sfc": "^3.2.33",
-    "@vueuse/core": "^8.3.1",
-    "typescript": "^4.6.3",
-    "unplugin-icons": "^0.14.1",
-    "unplugin-vue-components": "^0.19.3",
-    "vite": "2.9.6"
+  "exports": {
+    ".": {
+      "types": "./dist/VueAboutMe.vue.d.ts",
+      "import": "./dist/vue-about-me.mjs",
+      "require": "./dist/vue-about-me.cjs"
+    },
+    "./style.css": "./dist/style.css",
+    "./sfc": "./src/VueAboutMe.vue"
+  },
+  "main": "./dist/vue-about-me.cjs",
+  "module": "./dist/vue-about-me.mjs",
+  "types": "./dist/VueAboutMe.vue.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "browser": {
+    "./sfc": "./src/VueAboutMe.vue"
+  },
+  "style": "./dist/style.css",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "build:example": "vite build --mode example",
+    "lint": "eslint .",
+    "serve": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "sass": "^1.51.0",
-    "vue": "^3.2.33"
+    "sass": "^1.79.4",
+    "vue": "^3.5.11"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@iconify-json/ri": "^1.2.0",
+    "@types/node": "^22.7.4",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/compiler-sfc": "^3.5.11",
+    "@vueuse/core": "^11.1.0",
+    "bumpp": "^9.6.1",
+    "eslint": "^9.12.0",
+    "eslint-plugin-format": "^0.1.2",
+    "typescript": "^5.6.2",
+    "unplugin-icons": "^0.19.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.3",
+    "vue-tsc": "^2.1.6"
   }
 }

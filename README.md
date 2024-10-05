@@ -25,7 +25,7 @@ Example
 // index.js
 import Vue from 'vue'
 import App from './App.vue'
-...
+// ...
 ```
 
 ```html
@@ -41,8 +41,8 @@ import App from './App.vue'
 
 ```js
 // use default name VueAboutMe
-import VueAboutMe from "vue-about-me";
-import "vue-about-me/style.css";
+import VueAboutMe from 'vue-about-me'
+import 'vue-about-me/style.css'
 ```
 
 ### Icon
@@ -69,8 +69,8 @@ Then find icon name in <https://icones.js.org>.
 
 #### Example
 
-```js
-copyright: {
+```ts
+const copyright = {
   name: 'Vue About Me',
   repo: 'Vue-About-Me',
   author: 'YunYouJun',
@@ -79,8 +79,9 @@ copyright: {
   // logo: 'https://cn.vuejs.org/images/logo.png',
   link: 'https://yunyoujun.github.io/vue-about-me/',
   color: '#0078E7'
-},
-links: [
+}
+
+const links = [
   {
     // ...
     icon: 'ri:cloud-line'
