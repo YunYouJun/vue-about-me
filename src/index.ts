@@ -1,5 +1,3 @@
 import VueAboutMe from './VueAboutMe.vue'
 
-export {
-  VueAboutMe,
-}
+export { VueAboutMe }

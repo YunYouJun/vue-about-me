@@ -13,14 +13,12 @@ import pkg from './package.json'
 const commonConfig: UserConfigExport = {
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${path.resolve(__dirname, 'demo')}/`,
     },
   },
   plugins: [
     DTS({
-      include: [
-        './src/VueAboutMe.vue',
-      ],
+      include: './src',
     }),
     Vue(),
     Icons({
@@ -42,7 +40,7 @@ const commonConfig: UserConfigExport = {
 }
 
 // https://vitejs.dev/config/
-export default ({ command: _command, mode }) => {
+export default defineConfig(({ command: _command, mode }) => {
   if (mode === 'example') {
     return defineConfig(
       Object.assign(commonConfig, {
@@ -86,4 +84,4 @@ export default ({ command: _command, mode }) => {
       } as UserConfigExport),
     )
   }
-}
+})
