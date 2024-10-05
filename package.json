@@ -20,7 +20,7 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/VueAboutMe.vue.d.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/vue-about-me.mjs",
       "require": "./dist/vue-about-me.cjs"
     },
@@ -29,7 +29,7 @@
   },
   "main": "./dist/vue-about-me.cjs",
   "module": "./dist/vue-about-me.mjs",
-  "types": "./dist/VueAboutMe.vue.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "src"
