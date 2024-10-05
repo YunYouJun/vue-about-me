@@ -7,7 +7,7 @@ import { isDark } from '~/logic'
 // import "vue-about-me/style.css";
 
 // dev:
-import VueAboutMe from './VueAboutMe.vue'
+import VueAboutMe from '../src/VueAboutMe.vue'
 
 // test real js:
 // import VueAboutMe from "../dist/vue-about-me.mjs";

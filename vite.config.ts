@@ -16,6 +16,13 @@ const commonConfig: UserConfigExport = {
       '~/': `${path.resolve(__dirname, 'demo')}/`,
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
   plugins: [
     DTS({
       include: './src',
