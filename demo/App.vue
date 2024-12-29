@@ -3,6 +3,7 @@ import BaseHeader from '~/components/BaseHeader.vue'
 import { isDark } from '~/logic'
 
 // example
+// import { VueAboutMe } from 'vue-about-me'
 // import 'vue-about-me/style.css'
 
 // dev:

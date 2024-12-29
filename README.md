@@ -41,6 +41,7 @@ import App from './App.vue'
 
 ```js
 import { VueAboutMe } from 'vue-about-me'
+import 'vue-about-me/style.css'
 ```
 
 ### Icon
