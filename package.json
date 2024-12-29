@@ -2,7 +2,7 @@
   "name": "vue-about-me",
   "type": "module",
   "version": "1.3.4",
-  "packageManager": "pnpm@9.12.0",
+  "packageManager": "pnpm@9.15.2",
   "description": "A Vue component for displaying About Me Info.",
   "author": {
     "email": "me@yunyoujun.cn",
@@ -10,6 +10,7 @@
     "url": "https://www.yunyoujun.cn"
   },
   "license": "MIT",
+  "homepage": "https://yunyoujun.github.io/vue-about-me/",
   "repository": "https://github.com/YunYouJun/vue-about-me.git",
   "keywords": [
     "vue",
@@ -24,7 +25,7 @@
       "import": "./dist/vue-about-me.mjs",
       "require": "./dist/vue-about-me.cjs"
     },
-    "./style.css": "./dist/style.css",
+    "./style.css": "./dist/vue-about-me.css",
     "./sfc": "./src/VueAboutMe.vue"
   },
   "main": "./dist/vue-about-me.cjs",
@@ -37,7 +38,6 @@
   "browser": {
     "./sfc": "./src/VueAboutMe.vue"
   },
-  "style": "./dist/style.css",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
@@ -49,24 +49,24 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "sass": "^1.79.4",
-    "vue": "^3.5.11"
+    "sass": "^1.83.0",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
-    "@iconify-json/ri": "^1.2.0",
-    "@types/node": "^22.7.4",
-    "@vitejs/plugin-vue": "^5.1.4",
-    "@vue/compiler-sfc": "^3.5.11",
-    "@vueuse/core": "^11.1.0",
-    "bumpp": "^9.6.1",
-    "eslint": "^9.12.0",
-    "eslint-plugin-format": "^0.1.2",
-    "typescript": "^5.6.2",
-    "unplugin-icons": "^0.19.3",
-    "unplugin-vue-components": "^0.27.4",
-    "vite": "^5.4.8",
-    "vite-plugin-dts": "^4.2.3",
-    "vue-tsc": "^2.1.6"
+    "@antfu/eslint-config": "^3.12.1",
+    "@iconify-json/ri": "^1.2.5",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/compiler-sfc": "^3.5.13",
+    "@vueuse/core": "^12.2.0",
+    "bumpp": "^9.9.2",
+    "eslint": "^9.17.0",
+    "eslint-plugin-format": "^0.1.3",
+    "typescript": "^5.7.2",
+    "unplugin-icons": "^0.22.0",
+    "unplugin-vue-components": "^0.28.0",
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0",
+    "vue-tsc": "^2.2.0"
   }
 }

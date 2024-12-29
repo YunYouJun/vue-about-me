@@ -166,5 +166,5 @@ const copyright = Object.assign(
 </template>
 
 <style lang="scss">
-@import './styles/vue-about-me.scss';
+@use './styles/vue-about-me.scss';
 </style>

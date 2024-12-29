@@ -40,9 +40,7 @@ import App from './App.vue'
 `<script>`
 
 ```js
-// use default name VueAboutMe
-import VueAboutMe from 'vue-about-me'
-import 'vue-about-me/style.css'
+import { VueAboutMe } from 'vue-about-me'
 ```
 
 ### Icon

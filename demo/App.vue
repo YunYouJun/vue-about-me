@@ -2,12 +2,11 @@
 import BaseHeader from '~/components/BaseHeader.vue'
 import { isDark } from '~/logic'
 
-// method example:
-// import VueAboutMe from "vue-about-me";
-// import "vue-about-me/style.css";
+// example
+// import 'vue-about-me/style.css'
 
 // dev:
-import VueAboutMe from '../src/VueAboutMe.vue'
+import { VueAboutMe } from '../src'
 
 // test real js:
 // import VueAboutMe from "../dist/vue-about-me.mjs";
